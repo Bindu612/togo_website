@@ -1,0 +1,150 @@
+/* large Desktop */
+@media only screen and (min-width: 1550px) {
+}
+
+/* desktop 1200px to 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+}
+
+/* normal desktop */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+}
+
+/* tablet view */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .social-menu p {
+    font-size: 15px;
+  }
+
+  .social-menu ul li a {
+    margin: 0;
+  }
+  .img-gsmall img {
+    min-height: 85px;
+  }
+  .btn-book {
+    font-size: 14px;
+  }
+  section.search_single {
+    margin: 40% 0 5%;
+  }
+  section.searchbox {
+    margin: 12% 0 5%;
+  }
+  .row_reverse {
+    flex-direction: column-reverse;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+}
+
+/* mobile view */
+@media only screen and (max-width: 767px) {
+  /* ==========================
+       Nav bar
+  ========================== */
+  .nav-rightbox {
+    justify-content: flex-end;
+    margin-top: 10px;
+    gap: 8px;
+  }
+
+  .searchmodal button.close {
+    top: -15px;
+    right: 20px;
+  }
+  .scroll-navbar.scroll {
+    min-height: 100px;
+  }
+
+  /* ==========================
+     home page
+  ========================== */
+  .btn-book,
+  .btn-shop {
+    font-size: 12px;
+  }
+  section.hero_sec {
+    margin-top: 30%;
+  }
+
+  .heading-content h2 {
+    font-size: 18px;
+    line-height: 16px;
+    padding: 0;
+  }
+
+  .heading-content p {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+  .footer-boxlist {
+    justify-content: flex-start;
+    margin-top: 35px;
+  }
+
+  .subscribe-box {
+    padding: 15px;
+    width: 100%;
+  }
+  .subscribe-box h5 {
+    font-size: 18px;
+  }
+  .heading-content {
+    width: 80%;
+  }
+  section.search_box {
+    margin: 0;
+  }
+
+  .state_box,
+  .region_box {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .serch_innerbox {
+    margin-top: 18px;
+  }
+
+  h3.header_title {
+    line-height: 40px;
+  }
+  .img-gsmall,
+  .img-gbig {
+    padding: 20px 0;
+  }
+
+  .business-magazine .content {
+    margin-bottom: 25px;
+  }
+  section.search_single {
+    margin: 40% 0 5%;
+  }
+  .card-body {
+    padding: 1rem 0;
+  }
+  .row_reverse {
+    flex-direction: column-reverse;
+  }
+
+  section.searchbox {
+    margin: 40% 0 5%;
+  }
+
+  .showing_box {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .showing_box p {
+    margin: 10px 0;
+  }
+  .search_conhead {
+    font-size: 20px;
+    line-height: 35px;
+  }
+  .category_box {
+    margin: 14px 0 0;
+  }
+}
