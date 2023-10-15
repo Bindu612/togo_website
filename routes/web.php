@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\ServiceController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,4 +27,8 @@ Route::prefix('admin')->as('admin.')->group(function () {
 
 Route::resource('banner',BannerController::class);
 
+Route::resource('services', ServiceController::class);
+
 });
+
+

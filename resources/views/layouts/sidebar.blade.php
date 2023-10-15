@@ -215,6 +215,12 @@
                 </a>
               </li>
               <li class="sidebar-item">
+                <a href="{{route('admin.services.index')}}" class="sidebar-link">
+                  <i class="ti ti-home"></i>
+                  <span class="hide-menu">Services</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
                 <a href="widgets-charts.html" class="sidebar-link">
                   <i class="ti ti-chart-bar"></i>
                   <span class="hide-menu">Charts</span>
