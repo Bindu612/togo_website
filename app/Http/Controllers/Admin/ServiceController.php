@@ -34,36 +34,63 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        
-
-        $request->validate([
-            'name' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif',
-            'description' => 'required',
-            'highlight' => 'required',
-            'status' => 'in:active,inactive',
-        ]);
-    
-        // Handle image upload if present
-        if ($request->hasFile('service_image')) {
-            $imagePath = $request->file('service_image')->store('images');
-            $extension = $imagePath->getClientOriginalExtension();
-            $filename = $imagePath->getClientOriginalName();
-            $imagePath->move('assets/images/service_image', $filename);
+        {
+            // dd($request->all());
+            $validator = Validator::make($request->all(), [
+               'name' => 'string|required',
+               'image' => 'required|file|mimes:jpeg,jpg,png',
+               'description' => 'string|nullable',
+               'highlight' => 'string|required',
+              
+           ]);
+           if ($validator->fails()) {
+               return $validator->errors();
+           } else {
+               $serviceData = $request->except('_token');
            
-        }
+               if ($request->hasFile('image')) {
+                   $file = $request->file('image');
+                   $extension = $file->getClientOriginalExtension();
+                   $filename = $file->getClientOriginalName();
+                   $file->move('assets/images/service_image', $filename);
+                   $serviceData['image'] = $filename;
+               }
+               try {
+                   Service::create($serviceData);
+                   return response()->json(['success' => 'Added Successfully']);
+               } catch (Exception $e) {
+                   return response()->json(['error' => $e->getMessage()]);
+               }
+           }
+       }
+        //
+        //     $request->validate([
+        //     'name' => 'required',
+        //     'image' => 'image|mimes:jpeg,png,jpg,gif',
+        //     'description' => 'required',
+        //     'highlight' => 'required',
+        //     'status' => 'in:active,inactive',
+        // ]);
+    
+        // // Handle image upload if present
+        // if ($request->hasFile('service_image')) {
+        //     $imagePath = $request->file('service_image')->store('images');
+        //     $extension = $imagePath->getClientOriginalExtension();
+        //     $filename = $imagePath->getClientOriginalName();
+        //     $imagePath->move('assets/images/service_image', $filename);
+           
+        // }
         
     
-        Service::create([
-            'name' => $request->input('name'),
-            'image' => $imagePath ?? null,
-            'description' => $request->input('description'),
-            'highlight' => $request->input('highlight'),
-            'status' => $request->input('status'),
-        ]);
+        // Service::create([
+        //     'name' => $request->input('name'),
+        //     'image' => $imagePath ?? null,
+        //     'description' => $request->input('description'),
+        //     'highlight' => $request->input('highlight'),
+        //     'status' => $request->input('status'),
+        // ]);
     
-        return redirect()->route('admin.services.index')->with('success', 'Service created successfully.');
+        // return redirect()->route('admin.services.index')->with('success', 'Service created successfully.');
     }
     
 

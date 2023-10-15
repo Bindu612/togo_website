@@ -9,7 +9,8 @@
          <div class="modal-body">
             <div class="add-contact-box">
                 <div class="add-contact-content">
-                    <form id="form_data" action="{{ route('admin.services.store') }}" method="post">
+                    <form id="form_data" action="{{ route('admin.services.store') }}" method="post" enctype="multipart/form-data">
+                        
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
@@ -21,11 +22,27 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3 contact-name">
-                                    <label for="banner_image">Services Image<span class="text-danger">*</span></label>
-                                    <input type="file" id="service_image" name="service_image" class="form-control"
+                                    <label for="image">Services Image<span class="text-danger">*</span></label>
+                                    <input type="file" id="image" name="image" class="form-control"
                                         placeholder="Enter service_image" required>
                                 </div>
                             </div>
+                           
+                            <div class="col-md-6">
+                                <div class="mb-3 contact-name">
+                                    <label for="highlight"> Highlight<span class="text-danger">*</span></label>
+                                    <input type="text" id="highlight" name="highlight" class="form-control"
+                                        placeholder="Enter Highlight" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3 contact-name">
+                                    <label for="description"> Description</label>
+                                    <textarea name="description" id="description" class="form-control" placeholder="Enter Description" cols="20" rows="5"></textarea>
+                                  
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="modal-footer">
                             <button onclick="ajaxCall('form_data')" type="button"

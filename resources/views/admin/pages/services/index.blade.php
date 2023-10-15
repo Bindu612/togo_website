@@ -57,14 +57,14 @@
                               </td>
                               <td>{{ $service->name }}</td> 
                               <td>
-                                  @if($service->service_image)
-                                       <img src="{{ asset('assets/images/service_image/' . $service->service_image) }}" alt="" width="70" height="70">
+                                  @if($service->image)
+                                       <img src="{{ asset('assets/images/service_image/' . $service->image) }}" alt="" width="70" height="70">
                                   @else
                                       No Document Available
                                   @endif
                               </td>
-                              <td>{{ $service->Description }}</td>
-                              <td>{{ $service->Highlight }}</td>
+                              <td>{{ $service->description }}</td>
+                              <td>{{ $service->highlight }}</td>
                               <td>
                                   <div class="success-badges changeStatus" data-table="documents" data-uuid="{{$service->id}}"
                                   data-message="inactive" @if($service->status=="active") data-value="inactive" @else data-value="active" @endif ><span class="legend-indicator bg-success">
