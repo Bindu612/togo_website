@@ -119,35 +119,64 @@ class ServiceController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        {
-            $service = Service::findOrFail($id);
+        // {
+        //     $service = Service::findOrFail($id);
     
-            $request->validate([
-                'name' => 'required',
-                'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-                'description' => 'required',
-                'highlight' => 'required',
-                'status' => 'in:active,inactive',
-            ]);
+        //     $request->validate([
+        //         'name' => 'required',
+        //         'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        //         'description' => 'required',
+        //         'highlight' => 'required',
+        //         'status' => 'in:active,inactive',
+        //     ]);
     
-            if ($request->hasFile('image')) {
-                if ($service->image) {
-                    Storage::disk('public')->delete($service->image);
-                }
-                $imagePath = $request->file('image')->store('images', 'public');
-                $service->image = $imagePath;
-            }
+        //     if ($request->hasFile('image')) {
+        //         if ($service->image) {
+        //             Storage::disk('public')->delete($service->image);
+        //         }
+        //         $imagePath = $request->file('image')->store('images', 'public');
+        //         $service->image = $imagePath;
+        //     }
     
-            $service->name = $request->input('name');
-            $service->description = $request->input('description');
-            $service->highlight = $request->input('highlight');
-            $service->status = $request->input('status');
+        //     $service->name = $request->input('name');
+        //     $service->description = $request->input('description');
+        //     $service->highlight = $request->input('highlight');
+        //     $service->status = $request->input('status');
     
-            $service->save();
+           
     
-            return redirect()->route('admin.services.index')->with('success', 'Service updated successfully.');
-        }
+        //     try {
+        //         $service->save();           
+        //         return response()->json(['success' => 'Added Successfully']);
+        //     } catch (Exception $e) {
+        //         return response()->json(['error' => $e->getMessage()]);
+        //     }
+        // }
        
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+                     'image' => 'image|mimes:jpeg,png,jpg,gif',
+                    //  'description' => 'required',
+                    //  'highlight' => 'required',
+                   'status' => 'in:active,inactive',
+        ]);
+        if ($validator->fails()) {
+            return $validator->errors();
+         } 
+         else {
+            $serviceData = $request->except('_token', '_method');
+        
+            if ($request->hasFile('image')) {
+                $file = $request->file('image');
+                $extension = $file->getClientOriginalExtension();
+                $filename = $file->getClientOriginalName();
+                $file->move('assets/images/service_image', $filename);
+                $serviceData['image'] = $filename;
+            }
+
+            service::where('id', $id)->update($serviceData);
+            return response()->json(['success' =>" Updated Successfully"]);
+         }
        
     }
 
