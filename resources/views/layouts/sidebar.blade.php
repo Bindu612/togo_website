@@ -197,6 +197,12 @@
                 </a>
               </li>
               <li class="sidebar-item">
+                <a href="{{route('admin.banner.index')}}" class="sidebar-link">
+                  <i class="ti ti-user"></i>
+                  <span class="hide-menu">About Us</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
                 <a href="page-pricing.html" class="sidebar-link">
                   <i class="ti ti-currency-dollar"></i>
                   <span class="hide-menu">Pricing</span>
@@ -215,6 +221,12 @@
                 </a>
               </li>
               <li class="sidebar-item">
+                <a href="{{route('admin.site-setting')}}" class="sidebar-link">
+                  <i class="ti ti-settings"></i>
+                  <span class="hide-menu">Site Setting</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
                 <a href="{{route('admin.services.index')}}" class="sidebar-link">
                   <i class="ti ti-home"></i>
                   <span class="hide-menu">Services</span>
@@ -230,6 +242,12 @@
                 <a href="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/landingpage/index.html" class="sidebar-link">
                   <i class="ti ti-app-window"></i>
                   <span class="hide-menu">Landing Page</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a href="{{route('admin.banner.index')}}" class="sidebar-link">
+                  <i class="ti ti-user"></i>
+                  <span class="hide-menu">Contact Us</span>
                 </a>
               </li>
             </ul>
