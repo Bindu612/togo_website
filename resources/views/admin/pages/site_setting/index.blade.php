@@ -1,12 +1,12 @@
 @extends('layouts.main')
-@section('contain')
-    <div class="container-fluid">
+@section('section')
+    <div class="container-fluid mt-5">
         <!--  Row 1 -->
-        <div class="row">
-            <div class="col-md-12">
+        <div class="row mt-5">
+            <div class="col-md-12 mt-5">
 
-                <div class="card card-body">
-                    <div class="row">
+                <div class="card card-body mt-5">
+                    <div class="row mt-5">
                        <h4>Site Setting</h4>
                        <hr>
                        <form  id="form_data" action="{{ route('admin.store.site-setting') }}" method="post">
@@ -18,7 +18,8 @@
                             <div class="col-md-4">
                                 <div class="mb-3 contact-name">
                                     <label for="address">Address<span class="text-danger">*</span></label>  
-                                        <textarea name="address" id="address" class="form-control" placeholder="Enter address" required value="{{ $siteSetting ? $siteSetting->address : '' }}" cols="20" rows="5"></textarea>
+                                    <input type="text" id="address" name="address" class="form-control"
+                                        placeholder="Enter address " required value="{{ $siteSetting ? $siteSetting->address : '' }}">
                                 </div>
                             </div>
                             <div class="col-md-4">

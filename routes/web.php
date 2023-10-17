@@ -3,6 +3,8 @@
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SiteSettingController;
+use App\Http\Controllers\Admin\ContactUsController;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +35,8 @@ Route::resource('services', ServiceController::class);
 Route::controller(SiteSettingController::class)->group(function () {
     Route::get('site-setting', 'index')->name('site-setting');
     Route::post('site-setting', 'store')->name('store.site-setting');
+
+Route::resource('contact-us', ContactUsController::class);
 
 });
 
