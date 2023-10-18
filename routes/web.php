@@ -3,7 +3,8 @@
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SiteSettingController;
-use App\Http\Controllers\Admin\ContactUsController;
+use App\Http\Controllers\Admin\ContactUsListController;
+use App\Http\Controllers\Admin\AboutUsController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -32,14 +33,19 @@ Route::resource('banner',BannerController::class);
 
 Route::resource('services', ServiceController::class);
 
+
+Route::resource('contact-us', ContactUsListController::class);
+ 
+Route::resource('about-us', AboutUsController::class);
+
 Route::controller(SiteSettingController::class)->group(function () {
     Route::get('site-setting', 'index')->name('site-setting');
     Route::post('site-setting', 'store')->name('store.site-setting');
 
-Route::resource('contact-us', ContactUsController::class);
 
 });
 
 });
+
 
 

@@ -1,24 +1,26 @@
 <?php
 
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\SiteSetting;
+use App\Models\AboutUs;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class SiteSettingController extends Controller
+class AboutUsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $siteSetting = SiteSetting::first();
-
-        return view('admin.pages.site_setting.index', compact('siteSetting'));
-
+        //
+        $aboutUs = AboutUs::first();
+        return view('admin.pages.about_us.index', compact('aboutUs'));
+      
+       
     }
 
     /**
@@ -34,29 +36,24 @@ class SiteSettingController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'address' => 'string|required',
-            'phone1' => 'required|string',
-            'phone2' => 'nullable|string',
-            'email' => 'required|string',
-            'facebook_link' => 'required|string',
-            'instagram_link' => 'required|string',
-            'whatsapp_no' => 'required|string',
-            'youtube_link' => 'required|string',
-            'twitter_link' => 'required|string',
-            'status' => 'required|string',
-
-
-        ]);
-        if ($validator->fails()) {
-            return $validator->errors();
+        //
+        {
+            $validator = Validator::make($request->all(), [
+                'about_us' => 'text|required',
+                'mission' => 'text|string',
+                'vission' => 'text|string',
+    
+            ]);
+            if ($validator->fails()) {
+                return $validator->errors();
+            }
+            AboutUs::updateOrCreate( [], 
+                $request->all() 
+            );
+        
+            return response()->json(['success' => 'Added Successfully']);
+        
         }
-        SiteSetting::updateOrCreate( [], 
-            $request->all() 
-        );
-    
-        return response()->json(['success' => 'Added Successfully']);
-    
     }
 
     /**
@@ -73,6 +70,8 @@ class SiteSettingController extends Controller
     public function edit(string $id)
     {
         //
+      
+      
     }
 
     /**
@@ -81,7 +80,11 @@ class SiteSettingController extends Controller
     public function update(Request $request, string $id)
     {
         //
+
+      
+       
     }
+    
 
     /**
      * Remove the specified resource from storage.

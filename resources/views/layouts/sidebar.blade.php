@@ -197,7 +197,7 @@
                 </a>
               </li>
               <li class="sidebar-item">
-                <a href="{{route('admin.banner.index')}}" class="sidebar-link">
+                <a href="{{route('admin.about-us.index')}}" class="sidebar-link">
                   <i class="ti ti-user"></i>
                   <span class="hide-menu">About Us</span>
                 </a>

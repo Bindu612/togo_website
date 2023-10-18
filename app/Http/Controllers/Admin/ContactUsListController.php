@@ -4,21 +4,23 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\ContactUs;
-use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+use Yajra\DataTables\Facades\DataTables;
 
-class ContactUsController extends Controller
+class ContactUsListController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-        $contactus = ContactUs::first();
-
-        return view('admin.pages.contact_us.index', compact('contactus'));
+        if ($request->ajax()) {
+            $data = ContactUs::select('*');
+            return DataTables::of($data)
+                ->addIndexColumn()
+                ->make(true);
+        }
+        return view('admin.pages.contact-us.index');
     }
 
     /**
@@ -35,24 +37,6 @@ class ContactUsController extends Controller
     public function store(Request $request)
     {
         //
-        $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'phone' => 'required',
-            'email' => 'required|email',
-            'reason' => 'required|in:inquiry,feedback,others',
-            'message' => 'required',
-
-
-        ]);
-        if ($validator->fails()) {
-            return $validator->errors();
-        }
-        ContactUs::updateOrCreate( [], 
-            $request->all() 
-        );
-    
-        return response()->json(['success' => 'Added Successfully']);
-    
     }
 
     /**
