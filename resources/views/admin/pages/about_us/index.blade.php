@@ -18,19 +18,19 @@
                             <div class="col-md-4">
                                 <div class="mb-3 about-us">
                                     <label for="about_us">About Us<span class="text-danger">*</span></label>  
-                                        <textarea name="about_us" id="about_us" class="form-control"  placeholder="Enter about us "cols="20" rows="10"></textarea>
+                                        <textarea name="about_us" id="about_us" class="form-control"  placeholder="Enter about us "cols="20" rows="10" required></textarea>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3 about-us">
                                     <label for="mission">Mission<span class="text-danger">*</span></label>  
-                                        <textarea name="mission" id="mission" class="form-control"  placeholder="Enter Mission "cols="20" rows="10"></textarea>
+                                        <textarea name="mission" id="mission" class="form-control"  placeholder="Enter Mission "cols="20" rows="10"required ></textarea>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3 about-us">
                                     <label for="vission">Vission<span class="text-danger">*</span></label>  
-                                        <textarea name="vission" id="vission" class="form-control"  placeholder="Enter Vission "cols="20" rows="10"></textarea>
+                                        <textarea name="vission" id="vission" class="form-control"  placeholder="Enter Vission "cols="20" rows="10" required></textarea>
                                 </div>
                             </div>
                           
