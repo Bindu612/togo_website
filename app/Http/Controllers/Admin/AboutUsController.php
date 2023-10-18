@@ -39,9 +39,9 @@ class AboutUsController extends Controller
         //
         {
             $validator = Validator::make($request->all(), [
-                'about_us' => 'text|required',
-                'mission' => 'text|string',
-                'vission' => 'text|string',
+                'about_us' => 'string|required',
+                'mission' => 'string|required',
+                'vission' => 'string|required',
     
             ]);
             if ($validator->fails()) {
