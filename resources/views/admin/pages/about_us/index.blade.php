@@ -15,19 +15,19 @@
                        @method('PUT')
                        @endif --}}
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-12">
                                 <div class="mb-3 about-us">
                                     <label for="about_us">About Us<span class="text-danger">*</span></label>  
                                         <textarea name="about_us" id="about_us" class="form-control"  placeholder="Enter about us "cols="20" rows="10" required > {{ $aboutUs ? $aboutUs->about_us : '' }}</textarea>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-12">
                                 <div class="mb-3 about-us">
                                     <label for="mission">Mission<span class="text-danger">*</span></label>  
                                         <textarea name="mission" id="mission" class="form-control"  placeholder="Enter Mission "cols="20" rows="10"required >{{ $aboutUs ? $aboutUs->mission : '' }}</textarea>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-12">
                                 <div class="mb-3 about-us">
                                     <label for="vission">Vission<span class="text-danger">*</span></label>  
                                         <textarea name="vission" id="vission" class="form-control"  placeholder="Enter Vission "cols="20" rows="10" required>{{ $aboutUs ? $aboutUs->vission : '' }}</textarea>
@@ -55,31 +55,26 @@
 
     </div>
 @endsection
-@section('scripts')
+@push('custom-scripts')
 <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
 <script>
-                        ClassicEditor
-                                .create( document.querySelector( '#about_us' ) )
+                        ClassicEditor.create( document.querySelector( '#about_us' ) )
                                 .then( editor => {
                                         console.log( editor );
                                 } )
                                 .catch( error => {
                                         console.error( error );
                                 } );
-</script>
-<script>
-                        ClassicEditor
-                                .create( document.querySelector( '#mission' ) )
+
+                        ClassicEditor.create( document.querySelector( '#mission' ) )
                                 .then( editor => {
                                         console.log( editor );
                                 } )
                                 .catch( error => {
                                         console.error( error );
                                 } );
-</script>
-<script>
-                        ClassicEditor
-                                .create( document.querySelector( '#vission' ) )
+
+                        ClassicEditor.create( document.querySelector( '#vission' ) )
                                 .then( editor => {
                                         console.log( editor );
                                 } )
@@ -88,7 +83,7 @@
                                 } );
 </script>
 
-@endsection
+@endpush
 
 
 
