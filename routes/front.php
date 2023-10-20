@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Front\HomeFrontController;
 /*
 |--------------------------------------------------------------------------
 | Front Routes
@@ -14,10 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/', function () {
-    return view('front.home');
+Route::controller(HomeFrontController::class)->group(function () {
+    Route::get('/', 'showIndex')->name('front.home');
 });
+
+// Route::get('/', function () {
+//     return view('front.home');
+// });
 Route::view('/about-us', 'front.aboutus');
 Route::view('/features', 'front.features');
 Route::view('/contact-us', 'front.contactus');

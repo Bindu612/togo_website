@@ -26,6 +26,12 @@
                                         placeholder="Enter banner_image" required>
                                 </div>
                             </div>
+                            <div class="col-md-12">
+                                <div class="mb-3 contact-name">
+                                    <label for="description">Description<span class="text-danger">*</span></label>
+                                    <textarea  id="description" name="description" class="form-control"></textarea>
+                                </div>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button onclick="ajaxCall('form_data')" type="button"

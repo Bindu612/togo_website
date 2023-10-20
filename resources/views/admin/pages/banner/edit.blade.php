@@ -24,6 +24,7 @@
                     placeholder="Enter Banner Image">
             </div>
         </div>
+       
     </div>
     <hr>
     <div class="text-center ">
