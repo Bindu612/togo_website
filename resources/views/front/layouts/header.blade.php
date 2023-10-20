@@ -68,7 +68,7 @@
                                     <nav id="mobile-menu">
                                         <ul>
                                             <li>
-                                                <a href="{{url('/home')}}">Home</a>
+                                                <a href="{{url('/')}}">Home</a>
 
                                             </li>
                                             <li>
