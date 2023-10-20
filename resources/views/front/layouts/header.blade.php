@@ -61,21 +61,21 @@
                                 <div class="logo">
 
                                     <a href="index.php">
-                                        <img src="assets/img/logo/logo-2.png" alt="logo">
+                                        <img src="{{asset('front/assets/img/logo/logo-2.png')}}" alt="logo">
                                     </a>
                                 </div>
                                 <div class="main-menu main-menu-2 main-menu-border ml-30 pl-30">
                                     <nav id="mobile-menu">
                                         <ul>
                                             <li>
-                                                <a href="index.php">Home</a>
+                                                <a href="{{url('/home')}}">Home</a>
 
                                             </li>
                                             <li>
-                                                <a href="about-us.php">About Us</a>
+                                            <a href="{{url('/about-us')}}">About Us</a>
                                             </li>
                                             <li>
-                                                <a href="feature.php">Features</a>
+                                                <a href="{{url('/features')}}">Features</a>
                                             </li>
 
                                             <!-- <li>
@@ -86,7 +86,7 @@
                                             </li> -->
 
                                             <li>
-                                                <a href="contact-us.php">Contact Us</a>
+                                                <a href="{{url('/contact-us')}}">Contact Us</a>
                                             </li>
 
 

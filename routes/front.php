@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('front.home');
 });
+Route::view('/about-us', 'front.aboutus');
+Route::view('/features', 'front.features');
+Route::view('/contact-us', 'front.contactus');
+
