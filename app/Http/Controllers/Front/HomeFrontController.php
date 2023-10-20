@@ -10,14 +10,14 @@ class HomeFrontController extends Controller
 {
     public function showIndex()
     {
+        $services = Service::where('status','active')->get();
         $banners = Banner::where('status','active')->get();
-        return view('front.home',compact('banners'));
+        return view('front.home',compact('banners','services'));
+
+        
+       
     }
  
-    public function index()
-{
-    $Services = Service::where('status','active')->get();
-    return view('front.home',compact('Services'));
-}
+   
 
 }
