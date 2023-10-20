@@ -23,7 +23,7 @@
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-4 col-6">
                             <div class="category__item text-center mb-45">
                                 <div class="category__icon">
-                                    <a class="pic-main" href="#"><img src="assets/img/edu/content.png" class="img-fluid"
+                                    <a class="pic-main" href="#"><img src="{{asset('front/assets/img/edu/content.png')}}" class="img-fluid"
                                             alt="" style="height:auto; width:70%"></a>
 
                                 </div>
@@ -37,7 +37,7 @@
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-4 col-6">
                             <div class="category__item text-center mb-45">
                                 <div class="category__icon pink-bg">
-                                <a class="pic-main" href="#"><img src="assets/img/edu/briefcase.png" class="img-fluid" alt="" style="height:auto; width:70%"></a>
+                                <a class="pic-main" href="#"><img src="{{asset('front/assets/img/edu/briefcase.png')}}" class="img-fluid" alt="" style="height:auto; width:70%"></a>
                                 </div>
                                 <div class="category__content">
                                     <h4 class="category__title">
@@ -49,7 +49,7 @@
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-4 col-6">
                             <div class="category__item text-center mb-45">
                                 <div class="category__icon green-bg">
-                                <a class="pic-main" href="Staff-management-system.php"><img src="assets/img/edu/career.png" class="img-fluid" alt="" style="height:auto; width:70%"></a>
+                                <a class="pic-main" href="Staff-management-system.php"><img src="{{asset('front/assets/img/edu/career.png')}}" class="img-fluid" alt="" style="height:auto; width:70%"></a>
 
                                 </div>
                                 <div class="category__content">
@@ -62,7 +62,7 @@
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-4 col-6">
                             <div class="category__item text-center mb-45">
                                 <div class="category__icon orange-bg">
-                                <a class="pic-main" href="Fee management system.php"><img src="assets/img/edu/python.png" class="img-fluid" alt="" style="height:auto; width:75%"></a>
+                                <a class="pic-main" href="Fee management system.php"><img src="{{asset('front/assets/img/edu/python.png')}}" class="img-fluid" alt="" style="height:auto; width:75%"></a>
 
                                 </div>
                                 <div class="category__content">
@@ -75,7 +75,7 @@
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-4 col-6">
                             <div class="category__item text-center mb-45">
                                 <div class="category__icon">
-                                <a class="pic-main" href="Examination and Result preparation.php"><img src="assets/img/edu/designer.png" class="img-fluid" alt="" style="height:auto; width:70%"></a>
+                                <a class="pic-main" href="Examination and Result preparation.php"><img src="{{asset('front/assets/img/edu/designer.png')}}" class="img-fluid" alt="" style="height:auto; width:70%"></a>
 
                                 </div>
                                 <div class="category__content">
@@ -88,7 +88,7 @@
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-4 col-6">
                             <div class="category__item text-center mb-45">
                                 <div class="category__icon purple-bg">
-                                <a class="pic-main" href="Communication Management system.php"><img src="assets/img/edu/speaker.png" class="img-fluid" alt="" style="height:auto; width:60%"></a>
+                                <a class="pic-main" href="Communication Management system.php"><img src="{{asset('front/assets/img/edu/speaker.png')}}" class="img-fluid" alt="" style="height:auto; width:60%"></a>
 
                                 </div>
                                 <div class="category__content">
@@ -224,7 +224,7 @@
                         </p>
                     </div>
                     <div class="col-md-5 col-lg-5 feature-img1">
-                        <img src="assets/img/about/about-14.png" class="img-fluid">
+                        <img src="{{asset('front/assets/img/about/about-14.png')}}" class="img-fluid">
                     </div>
                     <!-- <div class="contact__btn">
                         <button type="submit" class="tp-btn88-red" fdprocessedid="rcurao">Know More</button>
@@ -246,7 +246,7 @@
                     </div> -->
 
                     <div class="col-md-12 col-lg-12 mt-20">
-                        <img src="assets/img/about/about-15.png" class="img-fluid">
+                        <img src="{{asset('front/assets/img/about/about-15.png')}}" class="img-fluid">
                     </div>
                 </div>
             </div>

@@ -43,8 +43,10 @@
                                 <th>Id</th>
                                 <th>Banner Name</th>
                                 <th>Banner Image</th>
+                                <th>Description</th>
                                 <th>Staus</th>
                                 <th>Action</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -61,6 +63,7 @@
                                       No Document Available
                                   @endif
                               </td>
+                              <td id="description">{{$item->description}}</td>
                               <td>
                                   <div class="success-badges changeStatus" data-table="documents" data-uuid="{{$item->id}}"
                                   data-message="inactive" @if($item->status=="active") data-value="inactive" @else data-value="active" @endif ><span class="legend-indicator bg-success">
@@ -110,3 +113,18 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
 </div>
 </div>
 @endsection
+
+@push('custom-scripts')
+<script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
+<script>
+                        ClassicEditor.create( document.querySelector( '#description' ) )
+                                .then( editor => {
+                                        console.log( editor );
+                                } )
+                                .catch( error => {
+                                        console.error( error );
+                                } );
+                    
+</script>
+
+@endpush
