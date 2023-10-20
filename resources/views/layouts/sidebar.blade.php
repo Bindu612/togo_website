@@ -221,6 +221,12 @@
                 </a>
               </li>
               <li class="sidebar-item">
+                <a href="{{route('admin.advantage.index')}}" class="sidebar-link">
+                  <i class="ti ti-ad"></i>
+                  <span class="hide-menu">Advantages</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
                 <a href="{{route('admin.site-setting')}}" class="sidebar-link">
                   <i class="ti ti-settings"></i>
                   <span class="hide-menu">Site Setting</span>

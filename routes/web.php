@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\AdvantageController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SiteSettingController;
 use App\Http\Controllers\Admin\ContactUsListController;
@@ -27,6 +28,7 @@ Route::prefix('admin')->as('admin.')->group(function () {
 
     
 Route::resource('banner',BannerController::class);
+Route::resource('advantage',AdvantageController::class);
 
 Route::resource('services', ServiceController::class);
 
