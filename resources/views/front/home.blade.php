@@ -33,7 +33,7 @@
                                                 src="{{asset('front/assets/img/slider/2/shape/slider-shape-33.png')}}" alt=""> --}}
                                         </div>
                                         <span class="slider__thumb-mask">
-                                            <img src="{{asset('assets/images/banner_image/')}}/{{$banner->banner_image}}" alt="">
+                                            <img src="{{asset('assets/images/banner_image/')}}{{$banner->banner_image}}/" alt="">
                                         </span>
                                     </div>
                                 </div>
@@ -281,7 +281,7 @@
 
                 </div>
             </div>
-
+            @foreach ($Services as $service)
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="edu_cat_2 cat-1">
@@ -290,9 +290,7 @@
                                     class="img-fluid" alt=""></a>
                         </div>
                         <div class="edu_cat_data">
-                            <h4 class="title"><a href="Online-registration-and-admission.php"> Online Registration
-                                    and
-                                    Admission</a></h4>
+                            <h4 class="title"><a href="Online-registration-and-admission.php"> {{$service->name}}</a></h4>
                             <!-- <ul class="meta">
                                 23 Classes</li>
                             </ul> -->
@@ -307,7 +305,7 @@
                                     class="img-fluid" alt=""></a>
                         </div>
                         <div class="edu_cat_data">
-                            <h4 class="title"><a href="Student-management-system.php">Student Management System</a>
+                            <h4 class="title"><a href="Student-management-system.php"> {{$service->name}}</a>
                             </h4>
                             <!-- <ul class="meta">
                                 58 Classes</li>
@@ -323,7 +321,7 @@
                                     src="{{asset('front/assets/img/edu/career.png')}}" class="img-fluid" alt=""></a>
                         </div>
                         <div class="edu_cat_data">
-                            <h4 class="title"><a href="Staff-management-system.php">Staff Management System</a></h4>
+                            <h4 class="title"><a href="Staff-management-system.php"> {{$service->name}}</a></h4>
                             <!-- <ul class="meta">
                                 74 Classes</li>
                             </ul> -->
@@ -338,7 +336,7 @@
                                     class="img-fluid" alt=""></a>
                         </div>
                         <div class="edu_cat_data">
-                            <h4 class="title"><a href="Fee management system.php">Fee Management System</a></h4>
+                            <h4 class="title"><a href="Fee management system.php"> {{$service->name}}</a></h4>
                             <!-- <ul class="meta">
                                 65 Classes</li>
                             </ul> -->
@@ -353,8 +351,8 @@
                                     src="{{asset('front/assets/img/edu/designer.png')}}" class="img-fluid" alt=""></a>
                         </div>
                         <div class="edu_cat_data">
-                            <h4 class="title"><a href="Examination and Result preparation.php">Examination & Result
-                                    Preparation</a></h4>
+                            <h4 class="title"><a href="Examination and Result preparation.php"> {{$service->name}}
+                                    </a></h4>
                             <!-- <ul class="meta">
                                 43 Classes</li>
                             </ul> -->
@@ -369,15 +367,18 @@
                                     src="{{asset('front/assets/img/edu/speaker.png')}}" class="img-fluid" alt=""></a>
                         </div>
                         <div class="edu_cat_data">
-                            <h4 class="title"><a href="Communication Management system.php"> Communication Management
-                                    System </a></h4>
+                            <h4 class="title"><a href="Communication Management system.php"> 
+                            {{$service->name}} </a></h4>
                             <!-- <ul class="meta">
                                 82 Classes</li>
                             </ul> -->
                         </div>
                     </div>
                 </div>
+
+
             </div>
+            @endforeach
 
             <center>
                 <div class="research__btn-2 pt-45">
