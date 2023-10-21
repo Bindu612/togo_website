@@ -36,17 +36,18 @@
                             <h3 class="footer__widget-title">Explore</h3>
                             <div class="footer__widget-content">
                                 <ul>
-                                    <li>
-                                        <a href="#">Features</a>
+                                <li>
+                                    <a href="{{url('/')}}">Home</a>
                                     </li>
                                     <li>
-                                        <a href="#">About Us</a>
+                                        <a href="{{url('/features')}}">Features</a>
                                     </li>
                                     <li>
-                                        <a href="#">Events</a>
+                                        <a href="{{url('/about-us')}}">About Us</a>
                                     </li>
+                                   
                                     <li>
-                                        <a href="#">Contact Us</a>
+                                        <a href="{{url('/contact-us')}}">Contact Us</a>
                                     </li>
                                     <!-- <li>
                                     <a href="#">Instructor</a>
