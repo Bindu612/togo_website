@@ -16,10 +16,7 @@
                                 <div class="col-xxl-6 col-lg-6">
                                     <div class="slider__content-2 mt-30">
                                         <h4 class="slider__title-2">{{$banner->name}}</h4>
-                                        <p>MoldTheFuture software is equally helpful in managing educational
-                                            s functional and administrative work.We envision our software
-                                            as a beacon of progress, guiding the way in skill-building and achieving
-                                            superior learning outcomes. </p>
+                                        <p> {{$banner->description}}</p>
                                         <a href="about-us.php" class="tp-btn-green">Learn More</a>
                                     </div>
                                 </div>
@@ -33,7 +30,7 @@
                                                 src="{{asset('front/assets/img/slider/2/shape/slider-shape-33.png')}}" alt=""> --}}
                                         </div>
                                         <span class="slider__thumb-mask">
-                                            <img src="{{asset('assets/images/banner_image/')}}{{$banner->banner_image}}/" alt="">
+                                            <img src="{{ asset('assets/images/banner_image/' . $banner->banner_image) }}" alt="">
                                         </span>
                                     </div>
                                 </div>
@@ -101,10 +98,10 @@
 
                 <div class="col-xxl-5 offset-xxl-1 col-xl-5 offset-xl-1 col-lg-6">
 
-                @foreach ($advantages as $key => $advantage )
+                
                     <div class="research__features-wrapper pt-35">
 
-                   
+                    @foreach ($advantages as $key => $advantage )
                         <div class="research__features-item d-sm-flex align-items-start mb-40">
                             <div class="research__features-icon mr-25">
                                 <span>
@@ -138,9 +135,10 @@
                                 </p>
                             </div>
                         </div>
+                        @endforeach
 
 
-                        <div class="research__features-item d-sm-flex align-items-start mb-40">
+                        <!-- <div class="research__features-item d-sm-flex align-items-start mb-40">
                             <div class="research__features-icon mr-25">
                                 <span class="yellow-bg">
                                     <svg width="28" height="27" viewBox="0 0 28 27" fill="none"
@@ -232,9 +230,9 @@
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
-                    @endforeach
+                    
                 </div>
             </div>
         </div>
@@ -284,12 +282,13 @@
 
                 </div>
             </div>
-            @foreach ($services as $key => $service)
+            
             <div class="row">
+            @foreach ($services as $key => $service)
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="edu_cat_2 cat-1">
                         <div class="edu_cat_icons">
-                            <a class="pic-main" href="#"><img src="{{asset('front/assets/img/edu/content.png')}}"
+                            <a class="pic-main" href="#"><img src="{{ asset('assets/images/service_image/' . $service->image) }}"
                                     class="img-fluid" alt=""></a>
                         </div>
                         <div class="edu_cat_data">
@@ -300,8 +299,9 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
 
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                <!-- <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="edu_cat_2 cat-2">
                         <div class="edu_cat_icons">
                             <a class="pic-main" href="#"><img src="{{asset('front/assets/img/edu/briefcase.png')}}"
@@ -309,11 +309,11 @@
                         </div>
                         <div class="edu_cat_data">
                             <h4 class="title"><a href="Student-management-system.php"> {{$service->name}}</a>
-                            </h4>
+                            </h4> -->
                             <!-- <ul class="meta">
                                 58 Classes</li>
                             </ul> -->
-                        </div>
+                        <!-- </div>
                     </div>
                 </div>
 
@@ -323,16 +323,16 @@
                             <a class="pic-main" href="Staff-management-system.php"><img
                                     src="{{asset('front/assets/img/edu/career.png')}}" class="img-fluid" alt=""></a>
                         </div>
-                        <div class="edu_cat_data">
-                            <h4 class="title"><a href="Staff-management-system.php"> {{$service->name}}</a></h4>
+                        <div class="edu_cat_data"> -->
+                            <!-- <h4 class="title"><a href="Staff-management-system.php"> {{$service->name}}</a></h4> -->
                             <!-- <ul class="meta">
                                 74 Classes</li>
                             </ul> -->
-                        </div>
+                        <!-- </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                <!-- <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="edu_cat_2 cat-4">
                         <div class="edu_cat_icons">
                             <a class="pic-main" href="Fee management system.php"><img src="{{asset('front/assets/img/edu/python.png')}}"
@@ -340,14 +340,14 @@
                         </div>
                         <div class="edu_cat_data">
                             <h4 class="title"><a href="Fee management system.php"> {{$service->name}}</a></h4>
-                            <!-- <ul class="meta">
+                             <ul class="meta">
                                 65 Classes</li>
-                            </ul> -->
+                            </ul> 
                         </div>
                     </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                </div> -->
+<!--  -->
+                <!-- <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="edu_cat_2 cat-10">
                         <div class="edu_cat_icons">
                             <a class="pic-main" href="Examination and Result preparation.php"><img
@@ -356,14 +356,14 @@
                         <div class="edu_cat_data">
                             <h4 class="title"><a href="Examination and Result preparation.php"> {{$service->name}}
                                     </a></h4>
-                            <!-- <ul class="meta">
+                             <ul class="meta">
                                 43 Classes</li>
-                            </ul> -->
+                            </ul> 
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                <!-- <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="edu_cat_2 cat-6">
                         <div class="edu_cat_icons">
                             <a class="pic-main" href="Communication Management system.php"><img
@@ -372,16 +372,16 @@
                         <div class="edu_cat_data">
                             <h4 class="title"><a href="Communication Management system.php"> 
                             {{$service->name}} </a></h4>
-                            <!-- <ul class="meta">
+                            <ul class="meta">
                                 82 Classes</li>
-                            </ul> -->
+                            </ul> 
                         </div>
                     </div>
-                </div>
+                </div> -->
 
 
-            </div>
-            @endforeach
+            <!-- </div> -->
+           
 
             <center>
                 <div class="research__btn-2 pt-45">
@@ -450,30 +450,31 @@
                     </h1>
                 </div>
                 <div class="col-xxl-8 col-xl-8 col-lg-8">
-                @foreach ($challenges as $key => $challenge)
+                
                     <div class="row">
+                    @foreach ($challenges as $key => $challenge)
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        
                             <div class="mt-0">
-                                <img src="{{asset('front/assets/img/about/icon1.png')}}" class="img-fluid mb-20"
+                                <img src="{{ asset('assets/images/challenge_image/' . $challenge->image) }}" class="img-fluid mb-20"
                                     style="height:auto; width:20%">
                                 <h4>{{$challenge->name}}</h4>
                                 <p>{{$challenge->description}}
                                 </p>
                             </div>
+                            
 
-                            <div class="mt-50">
+                            <!-- <div class="mt-50">
                                 <img src="{{asset('front/assets/img/about/icon2.png')}}" class="img-fluid mb-20"
                                     style="height:auto; width:20%">
 
                                 <h4>{{$challenge->name}}
                                 </h4>
                                 <p>{{$challenge->description}}</p>
-                            </div>
-
-
-
+                            </div> -->
                         </div>
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        @endforeach
+                        <!-- <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12">
 
                             <div class="mt-0">
                                 <img src="{{asset('front/assets/img/about/icon3.png')}}" class="img-fluid mb-20"
@@ -494,9 +495,9 @@
 
 
 
-                        </div>
+                        </div> -->
                     </div>
-                    @endforeach
+                  
                 </div>
             </div>
          
