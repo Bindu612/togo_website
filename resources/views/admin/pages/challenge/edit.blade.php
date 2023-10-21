@@ -1,34 +1,34 @@
 
 
-<form id="form_edit" method="POST" action="{{ route('admin.banner.update',$banner->id) }}">
+<form id="form_edit" method="POST" action="{{ route('admin.challenge.update',$challenge->id) }}">
     @csrf
     @method('PUT')
     <div class="row">
         <div class="col-md-6">
             <div class="mb-3 contact-name">
-                <label for="name">Banner Name</label>
+                <label for="name"> Name</label>
                 <input type="text" id="name" name="name" class="form-control"
-                    placeholder="Enter Banner Name" required value="{{$banner->name}}">
+                    placeholder="Enter Name" required value="{{$challenge->name}}">
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
-                <label for="current_image">Current Banner Image</label> <br>
-                    <img src="{{ asset('assets/images/banner_image/'.$banner->banner_image) }}" alt="logo" width="70px" height="70px">
+                <label for="current_image">Current Image</label> <br>
+                    <img src="{{ asset('assets/images/challenge_image/'.$challenge->image) }}" alt="logo" width="70px" height="70px">
             </div>
         </div>
         <div class="col-md-6">
             <div class="mb-3 contact-name">
-                <label for="banner_image">Replace Banner Image</label>
-                <input type="file" id="banner_image" name="banner_image" class="form-control"
-                    placeholder="Enter Banner Image">
+                <label for="image">Replace Image</label>
+                <input type="file" id="image" name="image" class="form-control"
+                    placeholder="Enter Image">
             </div>
         </div>
         <div class="col-md-12">
             <div class="mb-3 contact-name">
                 <label for="name"> Description</label>
                 <input type="text" id="description" name="description" class="form-control"
-                    placeholder="Enter description" required value="{{$banner->description}}">
+                    placeholder="Enter description" required value="{{$challenge->description}}">
             </div>
         </div>
        

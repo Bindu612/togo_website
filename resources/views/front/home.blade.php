@@ -98,8 +98,13 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-xxl-5 offset-xxl-1 col-xl-5 offset-xl-1 col-lg-6">
+
+                @foreach ($advantages as $key => $advantage )
                     <div class="research__features-wrapper pt-35">
+
+                   
                         <div class="research__features-item d-sm-flex align-items-start mb-40">
                             <div class="research__features-icon mr-25">
                                 <span>
@@ -127,13 +132,14 @@
                                 </span>
                             </div>
                             <div class="research__features-content">
-                                <h4>Secure</h4>
-                                <p>MoldTheFuture software is efficient in handling large set of data and your data is
-                                    equally secure with this software.
+                                <h4>{{$advantage->name}}</h4>
+                                <p>{{$advantage->description}}
 
                                 </p>
                             </div>
                         </div>
+
+
                         <div class="research__features-item d-sm-flex align-items-start mb-40">
                             <div class="research__features-icon mr-25">
                                 <span class="yellow-bg">
@@ -159,13 +165,13 @@
                                 </span>
                             </div>
                             <div class="research__features-content">
-                                <h4>Faster</h4>
-                                <p> MoldTheFuture is a software designed and developed to ease the process of learning.
-                                    MoldTheFuture software provides seamless experience in managing the activities of
-                                    educational institutes.
+                                <h4>{{$advantage->name}}</h4>
+                                <p> {{$advantage->description}}
                                 </p>
                             </div>
                         </div>
+
+
                         <div class="research__features-item d-sm-flex align-items-start">
                             <div class="research__features-icon mr-25">
                                 <span class="green-bg">
@@ -187,12 +193,9 @@
                                 </span>
                             </div>
                             <div class="research__features-content">
-                                <h4>Reliable
+                                <h4>{{$advantage->name}}
                                 </h4>
-                                <p>MoldTheFuture software is reliable in terms of usage. Multiple features used in
-                                    this software will guarantee better and efficient management of your educational
-                                    .
-
+                                <p>{{$advantage->description}}
 
                                 </p>
                             </div>
@@ -223,15 +226,15 @@
                                 </span>
                             </div>
                             <div class="research__features-content">
-                                <h4>Affordable</h4>
+                                <h4>{{$advantage->name}}</h4>
 
-                                <p>MoldTheFuture software (SaaS) is completely customized as per the user. All these
-                                    features will eye to solve the complexity of education management at an affordable
-                                    price.
+                                <p>{{$advantage->description}}
                                 </p>
                             </div>
                         </div>
                     </div>
+
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -281,7 +284,7 @@
 
                 </div>
             </div>
-            @foreach ($services as $service)
+            @foreach ($services as $key => $service)
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="edu_cat_2 cat-1">
@@ -437,26 +440,24 @@
     </section>
 
 
-
+    
     <section class="education_area pt-60 pb-60">
         <div class="container">
+       
             <div class="row">
                 <div class="col-xxl-4 col-xl-12 col-lg-12">
                     <h1 class="section__title section__title-44 text-left">Common challenges in the education industry
                     </h1>
                 </div>
                 <div class="col-xxl-8 col-xl-8 col-lg-8">
+                @foreach ($challenges as $key => $challenge)
                     <div class="row">
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12">
                             <div class="mt-0">
                                 <img src="{{asset('front/assets/img/about/icon1.png')}}" class="img-fluid mb-20"
                                     style="height:auto; width:20%">
-                                <h4>Status: Unknown</h4>
-                                <p>Students' progress can be evaluated only if their performance in all areas of growth
-                                    is
-                                    known. A gap in communication between teachers handling various courses, between
-                                    teachers
-                                    and students, or between teachers and parents can lead to an incomplete assessment.
+                                <h4>{{$challenge->name}}</h4>
+                                <p>{{$challenge->description}}
                                 </p>
                             </div>
 
@@ -464,11 +465,9 @@
                                 <img src="{{asset('front/assets/img/about/icon2.png')}}" class="img-fluid mb-20"
                                     style="height:auto; width:20%">
 
-                                <h4>Getting it right
+                                <h4>{{$challenge->name}}
                                 </h4>
-                                <p>Maintaining quality standards is an important aspect of any educational .
-                                    Forgetting to check the quality of some critical lab equipment or a chemical
-                                    solution can end up in disaster. Literally.</p>
+                                <p>{{$challenge->description}}</p>
                             </div>
 
 
@@ -480,33 +479,27 @@
                                 <img src="{{asset('front/assets/img/about/icon3.png')}}" class="img-fluid mb-20"
                                     style="height:auto; width:20%">
 
-                                <h4>Back to square one</h4>
-                                <p>On-boarding new employees is always a chore. It can be a new teacher, someone wanting
-                                    to try their hand at a new course, or a change in syllabus. All of this takes a lot
-                                    of time and effort from someone else willing to spend it, in order to achieve.</p>
+                                <h4>{{$challenge->name}}</h4>
+                                <p>{{$challenge->description}}</p>
                             </div>
 
                             <div class="mt-50">
                                 <img src="{{asset('front/assets/img/about/icon4.png')}}" class="img-fluid mb-20"
                                     style="height:auto; width:20%">
 
-                                <h4>Waiting for the right person
+                                <h4>{{$challenge->name}}
                                 </h4>
-                                <p>We've all been in the situation where we had to spend hours trying to figure out who
-                                    to
-                                    get
-                                    approval from for a particular request. Spending more time searching than actually
-                                    doing
-                                    is
-                                    a clear sign of waste.</p>
+                                <p>{{$challenge->description}}</p>
                             </div>
 
 
 
                         </div>
                     </div>
+                    @endforeach
                 </div>
             </div>
+         
         </div>
     </section>
 

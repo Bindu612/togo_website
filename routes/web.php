@@ -6,6 +6,10 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SiteSettingController;
 use App\Http\Controllers\Admin\ContactUsListController;
 use App\Http\Controllers\Admin\AboutUsController;
+use App\Http\Controllers\Admin\ChallengeController;
+
+
+
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +33,7 @@ Route::prefix('admin')->as('admin.')->group(function () {
     
 Route::resource('banner',BannerController::class);
 Route::resource('advantage',AdvantageController::class);
+Route::resource('challenge', ChallengeController::class);
 
 Route::resource('services', ServiceController::class);
 
