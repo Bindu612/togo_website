@@ -31,7 +31,7 @@ Route::controller(AboutUsFrontController::class)->group(function () {
 
  Route::controller(ContactUsFrontController::class)->group(function () {
     Route::get('/contact-us', 'showIndex')->name('front.contactus');
-    Route::post('/contact-us', 'store')->name('front.contactus');
+    Route::post('/contact-us', 'store')->name('store.front.contactus');
 
  });
 //Route::get('/contact-us', [ContactUsFrontController::class, 'showIndex'])->name('front.contactus');
