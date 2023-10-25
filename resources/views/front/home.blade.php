@@ -101,7 +101,7 @@
                 
                     <div class="research__features-wrapper pt-35">
 
-                    @foreach ($advantages as $key => $advantage )
+                    @foreach($advantages as $key => $advantage )
                         <div class="research__features-item d-sm-flex align-items-start mb-40">
                             <div class="research__features-icon mr-25">
                                 <span>
@@ -129,8 +129,8 @@
                                 </span>
                             </div>
                             <div class="research__features-content">
-                                <h4>{{$advantage->name}}</h4>
-                                <p>{{$advantage->description}}
+                                <h4>{{@$advantage?->name}}</h4>
+                                <p>{{@$advantage?->description}}
 
                                 </p>
                             </div>
@@ -163,8 +163,8 @@
                                 </span>
                             </div>
                             <div class="research__features-content">
-                                <h4>{{$advantage->name}}</h4>
-                                <p> {{$advantage->description}}
+                                <h4></h4>
+                                <p> 
                                 </p>
                             </div>
                         </div>
@@ -191,9 +191,9 @@
                                 </span>
                             </div>
                             <div class="research__features-content">
-                                <h4>{{$advantage->name}}
+                                <h4>
                                 </h4>
-                                <p>{{$advantage->description}}
+                                <p>
 
                                 </p>
                             </div>
@@ -224,9 +224,9 @@
                                 </span>
                             </div>
                             <div class="research__features-content">
-                                <h4>{{$advantage->name}}</h4>
+                                <h4></h4>
 
-                                <p>{{$advantage->description}}
+                                <p>
                                 </p>
                             </div>
                         </div>
@@ -299,7 +299,7 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
+            @endforeach
 
                 <!-- <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="edu_cat_2 cat-2">
@@ -308,7 +308,7 @@
                                     class="img-fluid" alt=""></a>
                         </div>
                         <div class="edu_cat_data">
-                            <h4 class="title"><a href="Student-management-system.php"> {{$service->name}}</a>
+                            <h4 class="title"><a href="Student-management-system.php"></a>
                             </h4> -->
                             <!-- <ul class="meta">
                                 58 Classes</li>
@@ -324,7 +324,7 @@
                                     src="{{asset('front/assets/img/edu/career.png')}}" class="img-fluid" alt=""></a>
                         </div>
                         <div class="edu_cat_data"> -->
-                            <!-- <h4 class="title"><a href="Staff-management-system.php"> {{$service->name}}</a></h4> -->
+                            <!-- <h4 class="title"><a href="Staff-management-system.php"> </a></h4> -->
                             <!-- <ul class="meta">
                                 74 Classes</li>
                             </ul> -->
@@ -339,7 +339,7 @@
                                     class="img-fluid" alt=""></a>
                         </div>
                         <div class="edu_cat_data">
-                            <h4 class="title"><a href="Fee management system.php"> {{$service->name}}</a></h4>
+                            <h4 class="title"><a href="Fee management system.php"> </a></h4>
                              <ul class="meta">
                                 65 Classes</li>
                             </ul> 
@@ -354,7 +354,7 @@
                                     src="{{asset('front/assets/img/edu/designer.png')}}" class="img-fluid" alt=""></a>
                         </div>
                         <div class="edu_cat_data">
-                            <h4 class="title"><a href="Examination and Result preparation.php"> {{$service->name}}
+                            <h4 class="title"><a href="Examination and Result preparation.php"> 
                                     </a></h4>
                              <ul class="meta">
                                 43 Classes</li>
@@ -371,7 +371,7 @@
                         </div>
                         <div class="edu_cat_data">
                             <h4 class="title"><a href="Communication Management system.php"> 
-                            {{$service->name}} </a></h4>
+                             </a></h4>
                             <ul class="meta">
                                 82 Classes</li>
                             </ul> 
@@ -480,17 +480,17 @@
                                 <img src="{{asset('front/assets/img/about/icon3.png')}}" class="img-fluid mb-20"
                                     style="height:auto; width:20%">
 
-                                <h4>{{$challenge->name}}</h4>
-                                <p>{{$challenge->description}}</p>
+                                <h4></h4>
+                                <p></p>
                             </div>
 
                             <div class="mt-50">
                                 <img src="{{asset('front/assets/img/about/icon4.png')}}" class="img-fluid mb-20"
                                     style="height:auto; width:20%">
 
-                                <h4>{{$challenge->name}}
+                                <h4>
                                 </h4>
-                                <p>{{$challenge->description}}</p>
+                                <p></p>
                             </div>
 
 
