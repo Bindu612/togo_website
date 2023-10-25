@@ -15,7 +15,7 @@ class ContactUsListController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = ContactUs::select('*');
+            $data = ContactUs::all();
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->make(true);

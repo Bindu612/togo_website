@@ -14,32 +14,56 @@
                   <h2 class="section__title">Get in<span class="yellow-bg yellow-bg-big"> touch<img src="assets/img/shape/yellow-bg.html" alt=""></span></h2>
                   <p>Have a question or just want to say hi? We'd love to hear from you.</p>
                </div>
+               @if(session('success'))
+                            <div id="success-message" class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+               @endif
                <div class="contact__form">
-                  <form id="contact-form" action="https://wphix.com/html/eduker-html/eduker/assets/mail.php" method="post">
+                  <form id="contact-form"action="{{ route('front.contactus') }}" method="post">
+                  @csrf
                      <div class="row">
                         <div class="col-xxl-6 col-xl-6 col-md-6">
                            <div class="contact__form-input">
-                              <input name="name" type="text" placeholder="Your Name">
+                              <input name="your_name" type="text" placeholder="Your Name" value="{{ old('your_name') }}" required>
                            </div>
+                           @error('your_name')
+                                        <span class="text-danger">{{ $message }}</span>
+                           @enderror
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-md-6">
                            <div class="contact__form-input">
-                              <input name="email" type="email" placeholder="Your Email">
+                              <input name="subject" type="text" placeholder="Subject" value="{{ old('subject') }}" required>
                            </div>
+                           @error('subject')
+                                        <span class="text-danger">{{ $message }}</span>
+                           @enderror
                         </div>
+                        <div class="col-xxl-6 col-xl-6 col-md-6">
+                           <div class="contact__form-input">
+                                        <input type="number" id="phone" name="phone" class="form-control" placeholder="Phone No"  value="{{ old('phone') }}">
+                           </div>
+                                    @error('phone')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                        </div>
+                        <div class="col-xxl-6 col-xl-6 col-md-6">
+                           <div class="contact__form-input">
+                              <input name="email" type="email" placeholder="Your Email" value="{{ old('email') }}" required>
+                           </div>
+                           @error('email')
+                                        <span class="text-danger">{{ $message }}</span>
+                           @enderror
+                        </div>
+                        
                         <div class="col-xxl-12">
                            <div class="contact__form-input">
-                              <input name="subject" type="text" placeholder="Subject">
-                           </div>
-                        </div>
-                        <div class="col-xxl-12">
-                           <div class="contact__form-input">
-                              <textarea name="message" placeholder="Enter Your Message"></textarea>
+                              <textarea name="message" placeholder="Enter Your Message">{{ old('message') }}</textarea>
                            </div>
                         </div>
                         <div class="col-xxl-12">
                            <div class="contact__form-agree  d-flex align-items-center mb-20">
-                              <input class="e-check-input" type="checkbox" id="e-agree">
+                              <input class="e-check-input" type="checkbox" id="e-agree" required>
                               <label class="e-check-label" for="e-agree">I agree to the<a href="#">Terms & Conditions</a></label>
                            </div>
                         </div>
@@ -62,7 +86,8 @@
                   <img class="contact-shape-3" src="assets/img/contact/contact-shape-3.html" alt="">
                </div>
                <div class="contact__info-inner white-bg">
-                  <ul>
+                  <ul>  
+                  @foreach ($data as $key => $setting)
                      <li>
                         <div class="contact__info-item d-flex align-items-start mb-35">
                            <div class="contact__info-icon mr-15">
@@ -73,7 +98,7 @@
                            </div>
                            <div class="contact__info-text">
                               <h4>Jamshedpur Office</h4>
-                              <p><a target="_blank" href="https://maps.app.goo.gl/EyBsNE2TSKXKbxrf8"> Kalika Nagar , Mango, Jamshedpur, Jharkhand 831012</a></p>
+                              <p><a target="_blank" href="https://maps.app.goo.gl/EyBsNE2TSKXKbxrf8"> {{$setting->address}}</a></p>
 
                            </div>
                         </div>
@@ -88,8 +113,7 @@
                            </div>
                            <div class="contact__info-text">
                               <h4>Email us directly</h4>
-                              <p><a href="mailto:info@Moldthefuture.com"><span class="__cf_email__" data-cfemail="493a3c3939263b3d092c2d3c222c3b672a2624">info@Moldthefuture.com</span></a></p>
-                              <p><a href="mailto:contact@Moldthefuture.com"> <span class="__cf_email__" data-cfemail="2e474048416e4b4a5b454b5c004d4143">contact@Moldthefuture.com</span></a></p>
+                              <p><a href="mailto:info@Moldthefuture.com"><span class="__cf_email__" data-cfemail="493a3c3939263b3d092c2d3c222c3b672a2624">{{$setting->email}}</span></a></p>
                            </div>
                         </div>
                      </li>
@@ -102,11 +126,12 @@
                            </div>
                            <div class="contact__info-text">
                               <h4>Phone</h4>
-                              <p><a href="tel:+91 898 7660 188 ">+91 898 7660 188 </a></p>
-                              <p><a href="tel:+91 91424 86865">+91 91424 86865</a></p>
+                              <p><a href="tel:+91 898 7660 188 ">{{$setting->phone1}} </a></p>
+                              <p><a href="tel:+91 91424 86865">{{$setting->phone2}}</a></p>
                            </div>
                         </div>
                      </li>
+                     @endforeach
                   </ul>
                   <div class="contact__social pl-30">
                      <h4>Follow Us</h4>

@@ -55,36 +55,6 @@
 
     </div>
 @endsection
-@push('custom-scripts')
-<script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
-<script>
-                        ClassicEditor.create( document.querySelector( '#about_us' ) )
-                                .then( editor => {
-                                        console.log( editor );
-                                } )
-                                .catch( error => {
-                                        console.error( error );
-                                } );
-
-                        ClassicEditor.create( document.querySelector( '#mission' ) )
-                                .then( editor => {
-                                        console.log( editor );
-                                } )
-                                .catch( error => {
-                                        console.error( error );
-                                } );
-
-                        ClassicEditor.create( document.querySelector( '#vission' ) )
-                                .then( editor => {
-                                        console.log( editor );
-                                } )
-                                .catch( error => {
-                                        console.error( error );
-                                } );
-</script>
-
-@endpush
-
 
 
 

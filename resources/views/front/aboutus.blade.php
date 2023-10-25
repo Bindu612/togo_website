@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-xxl-8 col-xl-8 col-lg-8 border-left pl-40 text-left">
 
-                    <p>{{$aboutus->misson}}</p>
+                    <p>{{$aboutus->mission}}</p>
 
                 </div>
             </div>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="col-xxl-8 col-xl-8 col-lg-8 border-left pl-40 text-left">
 
-                    <p>{{$aboutus->visson}}
+                    <p>{{$aboutus->vission}}
                     </p>
                 </div>
             </div>
