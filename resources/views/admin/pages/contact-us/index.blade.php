@@ -37,8 +37,8 @@
                             <thead class="header-item">
                                 <tr>
                                     <th>Id</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
+                                    <th>Your Name</th>
+                                    <th>Subject</th>
                                     <th>Phone</th>
                                     <th>Email</th>
                                     <th>Message</th>
@@ -64,12 +64,12 @@
                                         searchable: false
                                     },
                                     {
-                                        data: 'first_name',
-                                        name: 'first_name'
+                                        data: 'your_name',
+                                        name: 'your_name'
                                     },
                                     {
-                                        data: 'last_name',
-                                        name: 'last_name'
+                                        data: 'subject',
+                                        name: 'subject'
                                     },
                                     {
                                         data: 'phone',

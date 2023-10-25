@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\HomeFrontController;
+use App\Http\Controllers\Front\FeatureFrontController;
+use App\Http\Controllers\Front\AboutUsFrontController;
+use App\Http\Controllers\Front\ContactUsFrontController;
 /*
 |--------------------------------------------------------------------------
 | Front Routes
@@ -18,10 +21,22 @@ Route::controller(HomeFrontController::class)->group(function () {
     Route::get('/', 'showIndex')->name('front.home');
 });
 
+Route::controller(FeatureFrontController::class)->group(function () {
+    Route::get('/features', 'showIndex')->name('front.features');
+});
+
+Route::controller(AboutUsFrontController::class)->group(function () {
+    Route::get('/about-us', 'showIndex')->name('front.aboutus');
+});
+
+Route::controller(ContactUsFrontController::class)->group(function () {
+    Route::get('/contact-us', 'showIndex')->name('front.contactus');
+});
+
 // Route::get('/', function () {
 //     return view('front.home');
 // });
-Route::view('/about-us', 'front.aboutus');
-Route::view('/features', 'front.features');
-Route::view('/contact-us', 'front.contactus');
+
+
+
 

@@ -20,21 +20,23 @@
             <div class="col-xxl-8 col-xl-8 col-lg-8">
                 <div class="category__item-wrapper">
                     <div class="row">
+                      @foreach($services as $key => $service)
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-4 col-6">
                             <div class="category__item text-center mb-45">
                                 <div class="category__icon">
-                                    <a class="pic-main" href="#"><img src="{{asset('front/assets/img/edu/content.png')}}" class="img-fluid"
+                                    <a class="pic-main" href="#"><img src="{{ asset('assets/images/service_image/' . $service->image) }}" class="img-fluid"
                                             alt="" style="height:auto; width:70%"></a>
 
                                 </div>
                                 <div class="category__content">
                                     <h4 class="category__title">
-                                        <a href="#"> Online Registration and Admission</a>
+                                        <a href="#"> {{$service->name}}</a>
                                     </h4>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-4 col-6">
+                        @endforeach
+                        <!-- <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-4 col-6">
                             <div class="category__item text-center mb-45">
                                 <div class="category__icon pink-bg">
                                 <a class="pic-main" href="#"><img src="{{asset('front/assets/img/edu/briefcase.png')}}" class="img-fluid" alt="" style="height:auto; width:70%"></a>
@@ -96,8 +98,8 @@
                                         <a href="#"> Communication Management System</a>
                                     </h4>
                                 </div>
-                            </div>
-                        </div>
+                            </div> -->
+                        <!-- </div> -->
 
 
                     </div>
@@ -123,19 +125,18 @@
             <div class="col-xxl-2"></div>
 
         </div>
-
+        @foreach($services as $key => $service)
         <div class="row">
+       
             <div class="col-xl-7 col-lg-7 col-xxl-7 col-md-6 col-sm-12 mt-40 feature-one">
                 <div class="row">
                     <div class="col-md-7 col-lg-7">
-                        <h3> Online Registration and Admission</h3>
-                        <p class="text-dark"> This feature will enable you to set your own custom registration form, you
-                            can also have application
-                            verification and shortlisting of candidates through Moldthefuture software.
+                        <h3>{{$service->name}}</h3>
+                        <p class="text-dark">{{$service->description}}
                         </p>
                     </div>
                     <div class="col-md-5 col-lg-5 feature-img1">
-                        <img src="https://www.zohowebstatic.com/sites/zweb/images/people/zp-mobile-learning.png"
+                        <img src="{{ asset('assets/images/service_image/' . $service->image) }}"
                             class="img-fluid">
                     </div>
                     <!-- <div class="contact__btn">
@@ -143,9 +144,9 @@
                     </div> -->
                 </div>
 
-
             </div>
-            <div class="col-xl-5 col-lg-5 col-xxl-5 col-md-6 col-sm-12 feature-two mt-40">
+            
+             <div class="col-xl-5 col-lg-5 col-xxl-5 col-md-6 col-sm-12 feature-two mt-40">
                 <div class="row">
                     <div class="col-md-12 col-lg-12">
                         <h3>Student Management System</h3>
@@ -159,8 +160,9 @@
                     <img src="{{asset('front/assets/img/about/about-11.png')}}" class="img-fluid">
                 </div>
 
-            </div>
+            </div> 
         </div>
+        @endforeach
 
 
         <div class="row">
