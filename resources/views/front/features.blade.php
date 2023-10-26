@@ -125,19 +125,20 @@
             <div class="col-xxl-2"></div>
 
         </div>
-        @foreach($services as $key => $service)
+       
         <div class="row">
        
             <div class="col-xl-7 col-lg-7 col-xxl-7 col-md-6 col-sm-12 mt-40 feature-one">
                 <div class="row">
                     <div class="col-md-7 col-lg-7">
-                        <h3>{{$service->name}}</h3>
-                        <p class="text-dark">{{$service->description}}
+                        <h3>Student Management System</h3>
+                        <p class="text-dark">Admin can add students for the direct admission process and candidates can
+                            download their admission letter
                         </p>
                     </div>
                     <div class="col-md-5 col-lg-5 feature-img1">
-                        <img src="{{ asset('assets/images/service_image/' . $service->image) }}"
-                            class="img-fluid">
+                       
+                            <img src="{{asset('front/assets/img/about/about-11.png')}}" class="img-fluid">
                     </div>
                     <!-- <div class="contact__btn">
                         <button type="submit" class="tp-btn88" fdprocessedid="rcurao">Know More</button>
@@ -162,7 +163,7 @@
 
             </div> 
         </div>
-        @endforeach
+      
 
 
         <div class="row">
