@@ -36,14 +36,16 @@ class SiteSettingController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'address' => 'string|required',
-            'phone1' => 'required|string',
-            'phone2' => 'nullable|string',
-            'email' => 'required|string',
-            'facebook_link' => 'required|string',
-            'instagram_link' => 'required|string',
-            'whatsapp_no' => 'required|string',
-            'youtube_link' => 'required|string',
-            'twitter_link' => 'required|string',
+            'phone1' => 'required|string|digits:10',
+            'phone2' => 'nullable|string|digits:10',
+            'email1' => 'required|email',
+            'email2' => 'nullable|email',
+            'facebook_link' => 'required|url',
+            'instagram_link' => 'required|url',
+            'whatsapp_no' => 'required|string|digits:10',
+            'youtube_link' => 'required|url',
+            'twitter_link' => 'required|url',
+            'linkedin_link' => 'required|url',
             'status' => 'required|string',
 
 

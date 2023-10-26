@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('section')
-    <div class="container-fluid mt-5">
+    <div class="container-fluid">
         <!--  Row 1 -->
         <div class="row mt-5">
             <div class="col-md-12 mt-5">
@@ -38,9 +38,16 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3 contact-name">
-                                    <label for="email">Email<span class="text-danger">*</span></label>
-                                    <input type="email" id="email" name="email" class="form-control"
-                                    placeholder="Enter Email " required value="{{$siteSetting ? $siteSetting->email : ''}}">                               
+                                    <label for="email1">Email(Official) <span class="text-danger">*</span></label>
+                                    <input type="email1" id="email1" name="email1" class="form-control"
+                                    placeholder="Enter Email" required value="{{$siteSetting ? $siteSetting->email1 : ''}}">                               
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3 contact-name">
+                                    <label for="email2">Email(Non-Official) <span class="text-danger">*</span></label>
+                                    <input type="email2" id="email2" name="email2" class="form-control"
+                                    placeholder="Enter Email " required value="{{$siteSetting ? $siteSetting->email2 : ''}}">                               
                                 </div>
                             </div>
                             <div class="col-md-4">

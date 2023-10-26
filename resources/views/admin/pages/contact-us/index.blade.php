@@ -50,13 +50,16 @@
                     </div>
                      <script src="https://code.jquery.com/jquery-3.5.1.js"></script> 
 
-                     <script type="text/javascript">
-                      $(function() {
-                            var table = $('.data-table').DataTable({
-                                processing: true,
-                                serverSide: true,
-                                ajax: "{{ route('admin.contact-us.index') }}",
-                                columns: [
+                      <script type="text/javascript">
+                        $(document).ready(function () {
+                        $('.data-table').DataTable({
+                        processing: true,
+                        serverSide: true,
+                        ajax: {
+                        url: "your_server_endpoint", // Replace with your server-side script URL
+                        type: "POST", // or "GET" depending on your server configuration
+                        },
+                        columns: [
                                     {
                                         data: 'DT_RowIndex',
                                         name: 'DT_RowIndex',
@@ -84,10 +87,13 @@
                                         name: 'message'
                                     }
                                 ]
-                            });
-                        });
-
+                          });
+                     });
                     </script> 
+
+
+
+
                 </div>
             </div>
         </div>
