@@ -48,16 +48,20 @@ class ContactUsFrontController extends Controller
             'message' => 'nullable|string',
         ]);
 
+        // if ($validator->fails()) {
+        //     return redirect()->back()->withErrors($validator)->withInput();
+        // } 
         if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        } 
+            return $validator->errors();
+        }
         else {
             $data = $request->except('_token');
             try {
                 ContactUs::create($data);
-                return redirect()->back()->with('success', 'Added Successfully');
+                return response()->json(['success' => 'Added Successfully']);
+
             } catch (Exception $e) {
-                return redirect()->back()->with('error', 'An error occurred while saving data: ' . $e->getMessage())->withInput();
+                return response()->json(['error'=> 'An error occurred while saving data: ' . $e->getMessage()]);
             }
         }
     }

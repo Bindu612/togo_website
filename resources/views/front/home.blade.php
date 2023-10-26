@@ -308,11 +308,7 @@
                                     class="img-fluid" alt=""></a>
                         </div>
                         <div class="edu_cat_data">
-<<<<<<< Updated upstream
-                            <h4 class="title"><a href="Student-management-system.php"></a>
-=======
                             <h4 class="title"><a href="Student-management-system.php"> </a>
->>>>>>> Stashed changes
                             </h4> -->
                             <!-- <ul class="meta">
                                 58 Classes</li>
@@ -328,11 +324,7 @@
                                     src="{{asset('front/assets/img/edu/career.png')}}" class="img-fluid" alt=""></a>
                         </div>
                         <div class="edu_cat_data"> -->
-<<<<<<< Updated upstream
-                            <!-- <h4 class="title"><a href="Staff-management-system.php"> </a></h4> -->
-=======
                             <!-- <h4 class="title"><a href="Staff-management-system.php"></a></h4> -->
->>>>>>> Stashed changes
                             <!-- <ul class="meta">
                                 74 Classes</li>
                             </ul> -->
@@ -347,11 +339,7 @@
                                     class="img-fluid" alt=""></a>
                         </div>
                         <div class="edu_cat_data">
-<<<<<<< Updated upstream
-                            <h4 class="title"><a href="Fee management system.php"> </a></h4>
-=======
                             <h4 class="title"><a href="Fee management system.php"></a></h4>
->>>>>>> Stashed changes
                              <ul class="meta">
                                 65 Classes</li>
                             </ul> 

@@ -20,8 +20,8 @@
                             </div>
                @endif
                <div class="contact__form">
-                  <form id="contact-form"action="{{ route('front.contactus') }}" method="post">
-                  @csrf
+                  <form id="contact-form" action="{{ route('front.contactus') }}" method="post">
+                     @csrf
                      <div class="row">
                         <div class="col-xxl-6 col-xl-6 col-md-6">
                            <div class="contact__form-input">
