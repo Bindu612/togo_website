@@ -55,7 +55,7 @@
                         $('.data-table').DataTable({
                         processing: true,
                         serverSide: true,
-                        ajax: {
+                        ajax: "{{ route('admin.contact-us.index') }}"{
                         url: "your_server_endpoint", // Replace with your server-side script URL
                         type: "POST", // or "GET" depending on your server configuration
                         },
