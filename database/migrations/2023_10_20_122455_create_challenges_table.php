@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('image')->nullable();   
-            $table->string('description')->nullable();
+            $table->longtext('description')->nullable();
             $table->enum('status',["active","inactive"])->default('active');  
             $table->timestamps();
         });

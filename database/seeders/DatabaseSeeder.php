@@ -20,6 +20,14 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             UsersTableSeeder::class,
+            SiteSettingSeeder::class,
+            BannerSeeder::class,
+            ServiceSeeder::class,
+            FaqSeeder::class,
+            ContactUsSeeder::class,
+            AboutUsSeeder::class,
+            AdvantageSeeder::class,
+            ChallengeSeeder::class,
         ]);
     }
 }

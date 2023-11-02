@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('faqs', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
-            $table->string('description')->nullable();
+            $table->longtext('description')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->enum('section', ['About', 'Feature']); 
             $table->timestamps();

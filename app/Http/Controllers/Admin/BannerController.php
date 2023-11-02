@@ -33,6 +33,8 @@ class BannerController extends Controller
     public function store(Request $request)
     {
          // dd($request->all());
+         $description = substr($description, 0, 255); // Truncate to 255 characters
+
          $validator = Validator::make($request->all(), [
             'name' => 'string|required',
             'banner_image' => 'required|file|mimes:jpeg,jpg,png',
@@ -84,6 +86,7 @@ class BannerController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'string|required',
             'banner_image' => 'nullable|file|mimes:jpeg,jpg,png',
+            
         ]);
         if ($validator->fails()) {
             return $validator->errors();

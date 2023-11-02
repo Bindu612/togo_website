@@ -15,13 +15,9 @@ class ContactUsListController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->ajax()) {
-            $data = ContactUs::all();
-            return DataTables::of($data)
-                ->addIndexColumn()
-                ->make(true);
-        }
-        return view('admin.pages.contact-us.index');
+        $data =  ContactUs::all();
+        return view('admin.pages.contact-us.index',compact('data'));
+       
     }
 
     /**

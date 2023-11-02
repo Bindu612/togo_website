@@ -1,6 +1,6 @@
-@extends('layouts.app')
 
-@section('content')
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,8 @@
     <meta name="keywords" content="Mordenize" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/dist/images/logos/favicon.ico" />
+    
+    <link rel="shortcut icon" type="image/png" src="{{asset('front/assets/img/logo/logo-2.png')}}" />
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="../../dist/libs/owl.carousel/dist/assets/owl.carousel.min.css">
     <!-- Core Css -->
@@ -28,6 +29,7 @@
   <body>
     <!-- Preloader -->
     <div class="preloader">
+     
       <img src="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/dist/images/logos/favicon.ico" alt="loader" class="lds-ripple img-fluid" />
     </div>
     <!-- Body Wrapper -->
@@ -137,4 +139,4 @@
 
 <!-- Mirrored from demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/html/horizontal/authentication-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 01 Nov 2023 09:53:20 GMT -->
 </html>
-@endsection
+

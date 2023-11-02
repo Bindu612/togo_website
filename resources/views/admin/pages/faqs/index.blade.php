@@ -61,7 +61,7 @@
                                   </span>{{ $item->status ?? 'Active' }}</div>
                               </td>
                             
-                              <td>{{ $faq->section }}</td>
+                              <td>{{ $item->section }}</td>
                                   
                                 <td style="text-align:right;">
                                     <form id="edit{{ $item->id}}" action="{{ route('admin.faqs.destroy', $item->id) }}">
