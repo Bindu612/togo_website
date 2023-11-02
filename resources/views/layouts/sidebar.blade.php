@@ -39,7 +39,7 @@
             </a>
             <ul aria-expanded="false" class="collapse first-level">
               <li class="sidebar-item">
-                <a href="app-calendar.html" class="sidebar-link">
+                <a href="{{route('admin.calendar.index')}}" class="sidebar-link">
                   <i class="ti ti-calendar"></i>
                   <span class="hide-menu">Calendar</span>
                 </a>
@@ -70,7 +70,7 @@
               
               </li>
               <li class="sidebar-item">
-                <a href="page-account-settings.html" class="sidebar-link">
+                <a href="{{route('admin.account-setting.index')}}" class="sidebar-link">
                   <i class="ti ti-user-circle"></i>
                   <span class="hide-menu">Account Setting</span>
                 </a>
