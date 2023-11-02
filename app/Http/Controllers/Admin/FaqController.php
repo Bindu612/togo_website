@@ -34,8 +34,8 @@ class FaqController extends Controller
     {
          // dd($request->all());
          $validator = Validator::make($request->all(), [
-            'title' => 'required',
-        'description' => 'required',
+            'title' => 'required|string',
+        'description' => 'required|string',
         
            
         ]);
@@ -73,8 +73,8 @@ class FaqController extends Controller
     public function update(Request $request, string $id)
     {
         $validator = Validator::make($request->all(), [
-            'title' => 'required',
-            'description' => 'required',
+            'title' => 'required|string',
+            'description' => 'required|string',
            
         ]);
         if ($validator->fails()) {

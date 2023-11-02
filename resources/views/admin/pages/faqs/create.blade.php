@@ -21,7 +21,7 @@
                             </div>
                             <div class="col-md-6">                                
                                 <div class="mb-3 contact-name">
-                                <label for="status">Status<span class="text-danger">*</span></label>
+                                <label for="status">Status<span class="text-danger"></span></label>
                                 <select name="status" id="status" class="form-control">
                                     <option value="">Select Status</option>
                                     <option value="active" >Active</option>
@@ -31,7 +31,7 @@
                             </div>
                             <div class="col-md-6">                                
                                 <div class="mb-3 contact-name">
-                                <label for="section">Section<span class="text-danger">*</span></label>
+                                <label for="section">Section<span class="text-danger"></span></label>
                                 <select name="section" id="section" class="form-control">
                                     <option value="">Select Section</option>
                                     <option value="active" >About</option>
