@@ -40,14 +40,14 @@ class AboutUsSeeder extends Seeder
        streamlines administrative tasks but also enhances the learning experience,
        ultimately empowering the entire educational community.
 
-       <br><br>We envision our software as a beacon of progress, guiding the way in
+       We envision our software as a beacon of progress, guiding the way in
        skill-building and achieving superior learning outcomes. We are also
        dedicated to shaping the future of education, where every individual can
        unleash their full potential, and learning knows no bounds. Together, we
        will pave the way for a brighter, more inclusive, and knowledge-driven world
 
 
-       <br><br>By fostering a user-friendly interface, we aim to make our software
+       By fostering a user-friendly interface, we aim to make our software
        accessible to educators, administrators, and learners of all backgrounds. We
        believe that technology should be an enabler of education, breaking down
        barriers and providing equal opportunities for all.'

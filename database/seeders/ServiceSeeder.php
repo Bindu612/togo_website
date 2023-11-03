@@ -22,7 +22,7 @@ class ServiceSeeder extends Seeder
                 'image'=>'content.png',
                 'description'=>'lorem5',
                 'highlight'=>'excellent',
-                'status'=>'inactive'
+                'status'=>'active'
             ],
             [
                 'id'=>'2',
@@ -30,7 +30,7 @@ class ServiceSeeder extends Seeder
                 'image'=>'briefcase.png',
                 'description'=>'lorem5',
                 'highlight'=>'excellent',
-                'status'=>'inactive'
+                'status'=>'active'
             ],
             [
                 'id'=>'3',
@@ -38,7 +38,7 @@ class ServiceSeeder extends Seeder
                 'image'=>'career.png',
                 'description'=>'lorem5',
                 'highlight'=>'excellent',
-                'status'=>'inactive'
+                'status'=>'active'
             ],
             [
                 'id'=>'4',
@@ -46,7 +46,7 @@ class ServiceSeeder extends Seeder
                 'image'=>'python.png',
                 'description'=>'lorem5',
                 'highlight'=>'excellent',
-                'status'=>'inactive'
+                'status'=>'active'
             ],
             [
                 'id'=>'5',
@@ -55,7 +55,7 @@ class ServiceSeeder extends Seeder
                 'image'=>'designer.png',
                 'description'=>'lorem5',
                 'highlight'=>'excellent',
-                'status'=>'inactive'
+                'status'=>'active'
             ],
             [
                 'id'=>'6',
@@ -64,7 +64,7 @@ class ServiceSeeder extends Seeder
                 'image'=>'speaker.png',
                 'description'=>'lorem5',
                 'highlight'=>'excellent',
-                'status'=>'inactive'
+                'status'=>'active'
             ]
         ];
 

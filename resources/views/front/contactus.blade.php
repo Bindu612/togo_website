@@ -113,7 +113,9 @@
                            </div>
                            <div class="contact__info-text">
                               <h4>Email us directly</h4>
-                              <p><a href="mailto:info@Moldthefuture.com"><span class="__cf_email__" data-cfemail="493a3c3939263b3d092c2d3c222c3b672a2624">{{$setting->email}}</span></a></p>
+                              <p><a href="mailto:info@Moldthefuture.com"><span class="__cf_email__" data-cfemail="493a3c3939263b3d092c2d3c222c3b672a2624">{{$setting->email1}}</span></a></p>
+                              <p><a href="mailto:info@Moldthefuture.com"><span class="__cf_email__" data-cfemail="493a3c3939263b3d092c2d3c222c3b672a2624">{{$setting->email2}}</span></a></p>
+
                            </div>
                         </div>
                      </li>
@@ -127,7 +129,7 @@
                            <div class="contact__info-text">
                               <h4>Phone</h4>
                               <p><a href="tel:+91 898 7660 188 ">{{$setting->phone1}} </a></p>
-                              <p><a href="tel:+91 91424 86865">{{$setting->phone2}}</a></p>
+                              <p><a href="tel:+91 914 2486 865">{{$setting->phone2}}</a></p>
                            </div>
                         </div>
                      </li>
