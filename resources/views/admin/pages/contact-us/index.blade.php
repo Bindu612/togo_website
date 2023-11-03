@@ -45,55 +45,23 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            </tbody>
+                            @foreach ($data as $item)
+                            <tr>
+                              <td class="table-column-pe-0">
+                                  {{ $loop->index + 1 }}
+                              </td>
+                              <td>{{$item->your_name}}</td>
+                            
+                              <td>{{$item->subject}}</td>
+                              <td>{{$item->phone}}</td>
+                              <td>{{$item->email}}</td>
+                              <td>{{$item->message}}</td>
+                            
+                            </tr>   
+                            @endforeach
+                        </tbody>
                         </table>
                     </div>
-                     <script src="https://code.jquery.com/jquery-3.5.1.js"></script> 
-
-                      <script type="text/javascript">
-                        $(document).ready(function () {
-                        $('.data-table').DataTable({
-                        processing: true,
-                        serverSide: true,
-                        ajax: "{{ route('admin.contact-us.index') }}"{
-                        url: "your_server_endpoint", // Replace with your server-side script URL
-                        type: "POST", // or "GET" depending on your server configuration
-                        },
-                        columns: [
-                                    {
-                                        data: 'DT_RowIndex',
-                                        name: 'DT_RowIndex',
-                                        orderable: false,
-                                        searchable: false
-                                    },
-                                    {
-                                        data: 'your_name',
-                                        name: 'your_name'
-                                    },
-                                    {
-                                        data: 'subject',
-                                        name: 'subject'
-                                    },
-                                    {
-                                        data: 'phone',
-                                        name: 'phone'
-                                    },
-                                    {
-                                        data: 'email',
-                                        name: 'email'
-                                    },
-                                    {
-                                        data: 'message',
-                                        name: 'message'
-                                    }
-                                ]
-                          });
-                     });
-                    </script> 
-
-
-
-
                 </div>
             </div>
         </div>
