@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\ChallengeController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\CalendarController;
 use App\Http\Controllers\Admin\EventController;
+use App\Http\Controllers\Admin\NoteController;
 
 
 
@@ -43,6 +44,8 @@ Route::resource('faqs', FaqController::class);
 Route::resource('account-setting', AccountSettingController::class);
 Route::resource('calendar', CalendarController::class);
 Route::resource('events', EventController::class);
+Route::resource('notes', NoteController::class);
+
 
 
 

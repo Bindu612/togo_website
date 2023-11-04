@@ -50,6 +50,12 @@
                   <span class="hide-menu">Event</span>
                 </a>
               </li>
+              <li class="sidebar-item">
+                <a href="{{route('admin.notes.index')}}" class="sidebar-link">
+                  <i class="ti ti-calendar"></i>
+                  <span class="hide-menu">Note</span>
+                </a>
+              </li>
               
             </ul>
           </li>

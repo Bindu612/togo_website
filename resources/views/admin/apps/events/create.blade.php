@@ -12,44 +12,41 @@
                     <form id="form_data" action="{{ route('admin.events.store') }}" method="post">
                         @csrf
                         <div class="row">
-                            <div class="col-md-6">
+                         <div class="col-md-6">
                             <div class="mb-3 contact-name">
                
-               <label for="event_date">Event Date<span class="text-danger">*</span></label>
-               <input type="date" class="form-control" id="event_date" name="event_date"  placeholder="Enter Event Date" required>
+                               <label for="event_date">Event Date<span class="text-danger">*</span></label>
+                               <input type="date" class="form-control" id="event_date" name="event_date"  placeholder="Enter Event Date" required>
 
-       </div>
                             </div>
-                            <div class="col-md-6">
-                                
-                                <div class="mb-3 contact-name">
-            <label for="event_start_time">Event Start Time<span class="text-danger">*</span></label>
-            <input type="time" class="form-control" id="event_start_time" name="event_start_time" placeholder="Enter Event Start Time" required>
-            </div>
-                                
-                            </div>
-                            <div class="col-md-6">
-                              <div class="mb-3 contact-name">
-                                <label for="event_end_time">Event End Time<span class="text-danger">*</span></label>
-                                <input type="time" class="form-control" id="event_end_time" name="event_end_time" placeholder="Enter Event End Time" required>
-                              </div>
-                            </div>
-
-                            <div class="col-md-6">
+                         </div>
+                         <div class="col-md-6">
                             <div class="mb-3 contact-name">
-        <label for="event_title">Event Title<span class="text-danger">*</span></label>
-        <input type="text" class="form-control" id="event_title" name="event_title" placeholder="Enter Event Title" required>
-            </div>
+                              <label for="event_start_time">Event Start Time<span class="text-danger">*</span></label>
+                              <input type="time" class="form-control" id="event_start_time" name="event_start_time" placeholder="Enter Event Start Time" required>
                             </div>
+                         </div>
+                         <div class="col-md-6">
+                            <div class="mb-3 contact-name">
+                              <label for="event_end_time">Event End Time<span class="text-danger">*</span></label>
+                              <input type="time" class="form-control" id="event_end_time" name="event_end_time" placeholder="Enter Event End Time" required>
+                            </div>
+                         </div>
 
-                            <div class="col-md-12">
+                         <div class="col-md-6">
+                            <div class="mb-3 contact-name">
+                              <label for="event_title">Event Title<span class="text-danger">*</span></label>
+                              <input type="text" class="form-control" id="event_title" name="event_title" placeholder="Enter Event Title" required>
+                            </div>
+                         </div>
+
+                         <div class="col-md-12">
                             <div class="mb-3 contact-name">
                
-               <label for="event_notes">Event Notes</label>
-               <textarea class="form-control" id="event_notes" name="event_notes"></textarea>
-   
-               </div>
+                               <label for="event_notes">Event Notes</label>
+                               <textarea class="form-control" id="event_notes" name="event_notes"></textarea>
                             </div>
+                         </div>
 
 
 
