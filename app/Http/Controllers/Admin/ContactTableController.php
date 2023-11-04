@@ -3,21 +3,20 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Event;
+use App\Models\ContactTable;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class EventController extends Controller
+class ContactTableController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        
-        $data =  Event::all();
-       return view('admin.apps.events.index',compact('data'));
+        $data =  ContactTable::all();
+       return view('admin.apps.contact-tables.index',compact('data'));
     }
 
     /**
@@ -33,25 +32,23 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-         // dd($request->all());
-        
+       
          $validator = Validator::make($request->all(), [
-            'event_date' => 'required|date',
-            'event_start_time' => 'required|date_format:H:i',
-            'event_end_time' => ['required', 'date_format:H:i', Rule::notIn([$validator->event_start_time])],
-            'event_title' => 'required|max:255',
-            'event_notes' => 'nullable',
-           
+            'name' => 'string|required',
+            'email' => 'required|email',
+            'location' => 'string|required',
+            'phone' => 'required|string|digits:10',
+          
         ]);
-      
         if ($validator->fails()) {
             return $validator->errors();
         }
-        Event::updateOrCreate( [], 
+        ContactTable::updateOrCreate( [], 
             $request->all() 
         );
     
         return response()->json(['success' => 'Added Successfully']);
+       
     }
 
     /**
@@ -67,8 +64,8 @@ class EventController extends Controller
      */
     public function edit(string $id)
     {
-        $event = Event::find($id);
-        return view('admin.apps.events.edit',compact('event')); 
+        $contactTable = ContactTable::find($id);
+        return view('admin.apps.contact-tables.edit',compact('contactTable')); 
     }
 
     /**
@@ -77,17 +74,14 @@ class EventController extends Controller
     public function update(Request $request, string $id)
     {
         $validator = Validator::make($request->all(), [
-            'event_date' => 'required|date',
-            'event_start_time' => 'required|date_format:H:i',
-            'event_end_time' => ['required', 'date_format:H:i', Rule::notIn([$validator->event_start_time])],
-            'event_title' => 'required|max:255',
-            'event_notes' => 'nullable',
+            'name' => 'string|required',
+           
+            
         ]);
-        
-         if ($validator->fails()) {
+        if ($validator->fails()) {
             return $validator->errors();
         }
-        Event::updateOrCreate( [], 
+        ContactTable::updateOrCreate( [], 
             $request->all() 
         );
     
@@ -100,8 +94,8 @@ class EventController extends Controller
     public function destroy(string $id)
     {
         try {
-            $eventData = Event::findOrFail($id);
-            $eventData->delete();
+            $contacttableData = ContactTable::findOrFail($id);
+            $contacttableData->delete();
             return "Delete";
         } catch (Exception $e) {
             return response()->json(["error" =>"Can't Be Delete this May having some Employee"]);

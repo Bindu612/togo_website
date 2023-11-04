@@ -14,7 +14,19 @@ class UsersTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $user = User::updateOrCreate(['email'=>"admin@togoteam.com"],['name'=>"admin",'email'=>"admin@togoteam.com",'password'=> Hash::make('User@123')]);
+        $user = User::updateOrCreate
+        (['email'=>"admin@togoteam.com"],
+       
+
+        ['name'=>"admin",
+        'email'=>"admin@togoteam.com",
+        'password'=> Hash::make('User@123'),
+        'image'=>'device.png',
+        'location'=>'giridih',
+        'phone'=>'7091025881',
+        'address'=>'remba'
+    
+    ]);
 
     }
 }

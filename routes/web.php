@@ -12,7 +12,11 @@ use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\CalendarController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\NoteController;
+use App\Http\Controllers\Admin\ContactListController;
+use App\Http\Controllers\Admin\ContactTableController;
+use App\Http\Controllers\Admin\NoteApplicationController;
 
+use App\Http\Controllers\Admin\UserController;
 
 
 
@@ -45,6 +49,13 @@ Route::resource('account-setting', AccountSettingController::class);
 Route::resource('calendar', CalendarController::class);
 Route::resource('events', EventController::class);
 Route::resource('notes', NoteController::class);
+Route::resource('contact-lists', ContactListController::class);
+Route::resource('contact-tables', ContactTableController::class);
+Route::resource('note-applications', NoteApplicationController::class);
+
+Route::controller(UserController::class)->group(function () {
+    Route::get('user', 'showIndex')->name('admin.login');
+});
 
 
 

@@ -8,8 +8,8 @@
         </li>
         <li class="nav-item d-none d-xl-block">
           <a href="index-2.html" class="text-nowrap nav-link">
-            <img src="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/dist/images/logos/dark-logo.svg" class="dark-logo" width="180" alt="" />
-            <img src="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/dist/images/logos/light-logo.svg" class="light-logo"  width="180" alt="" />
+            <img src="{{asset('front/assets/img/logo/logo-2.png')}}" class="dark-logo" width="180" alt="" />
+            <img src="{{asset('front/assets/img/logo/logo-2.png')}}" class="light-logo"  width="180" alt="" />
           </a>
         </li>
         <li class="nav-item d-none d-xl-block">

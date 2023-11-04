@@ -52,8 +52,26 @@
               </li>
               <li class="sidebar-item">
                 <a href="{{route('admin.notes.index')}}" class="sidebar-link">
-                  <i class="ti ti-calendar"></i>
+                <i class="ti ti-notes"></i>
                   <span class="hide-menu">Note</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a href="{{route('admin.note-applications.index')}}" class="sidebar-link">
+                <i class="ti ti-notes"></i>
+                  <span class="hide-menu">Notes Application</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a href="{{route('admin.contact-lists.index')}}" class="sidebar-link">
+                <i class="ti ti-list-details"></i>
+                  <span class="hide-menu">Contact List</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a href="{{route('admin.contact-tables.index')}}" class="sidebar-link">
+                <i class="ti ti-list-details"></i>
+                  <span class="hide-menu">Contact Table</span>
                 </a>
               </li>
               

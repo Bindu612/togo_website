@@ -5,11 +5,9 @@
     @method('PUT')
     <div class="row">
         <div class="col-md-6">
-            <div class="mb-3 contact-name">
-               
+            <div class="mb-3 contact-name">   
                     <label for="event_date">Event Date</label>
                     <input type="date" class="form-control" id="event_date" name="event_date"  placeholder="Enter Event Date" required value="{{$event->event_date}}">
-
             </div>
         </div>
         <div class="col-md-6">
