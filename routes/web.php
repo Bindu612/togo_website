@@ -10,6 +10,8 @@ use App\Http\Controllers\Admin\AboutUsController;
 use App\Http\Controllers\Admin\ChallengeController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\CalendarController;
+use App\Http\Controllers\Admin\EventController;
+
 
 
 
@@ -40,6 +42,7 @@ Route::resource('challenge', ChallengeController::class);
 Route::resource('faqs', FaqController::class);
 Route::resource('account-setting', AccountSettingController::class);
 Route::resource('calendar', CalendarController::class);
+Route::resource('events', EventController::class);
 
 
 

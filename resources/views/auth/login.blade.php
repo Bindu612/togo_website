@@ -30,7 +30,7 @@
     <!-- Preloader -->
     <div class="preloader">
      
-      <img src="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/dist/images/logos/favicon.ico" alt="loader" class="lds-ripple img-fluid" />
+      <img src="{{asset('front/assets/img/logo/logo-2.png')}}" alt="loader" class="lds-ripple img-fluid" />
     </div>
     <!-- Body Wrapper -->
     <div class="page-wrapper" id="main-wrapper" data-layout="horizontal" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
@@ -39,10 +39,10 @@
           <div class="row">
             <div class="col-xl-7 col-xxl-8">
               <a href="index-2.html" class="text-nowrap logo-img d-block px-4 py-9 w-100">
-                <img src="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/dist/images/logos/dark-logo.svg" width="180" alt="">
+                <img src="{{asset('front/assets/img/logo/logo-2.png')}}" width="180" alt="">
               </a>
               <div class="d-none d-xl-flex align-items-center justify-content-center" style="height: calc(100vh - 80px);">
-                <img src="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/dist/images/backgrounds/login-security.svg" alt="" class="img-fluid" width="500">
+                <img src="{{asset('front/assets/img/logo/logo-2.png')}}" alt="" class="img-fluid" width="500">
               </div>
             </div>
             <div class="col-xl-5 col-xxl-4">

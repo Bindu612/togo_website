@@ -44,6 +44,12 @@
                   <span class="hide-menu">Calendar</span>
                 </a>
               </li>
+              <li class="sidebar-item">
+                <a href="{{route('admin.events.index')}}" class="sidebar-link">
+                  <i class="ti ti-calendar"></i>
+                  <span class="hide-menu">Event</span>
+                </a>
+              </li>
               
             </ul>
           </li>

@@ -1,6 +1,6 @@
 
 
-<form id="form_edit" method="POST" action="{{ route('admin.faqs.update',$faqs->id) }}">
+<form id="form_edit" method="POST" action="{{ route('admin.faqs.update',$faq->id) }}">
     @csrf
     @method('PUT')
     <div class="row">
@@ -8,7 +8,7 @@
             <div class="mb-3 contact-name">
                 <label for="name">Title</label>
                 <input type="text" id="title" name="title" class="form-control"
-                    placeholder="Enter Title" required value="{{$faqs->title}}">
+                    placeholder="Enter Title" required value="{{$faq->title}}">
             </div>
         </div>
        
@@ -17,7 +17,7 @@
             <div class="mb-3 contact-name">
                 <label for="name"> Description</label>
                 <input type="text" id="description" name="description" class="form-control"
-                    placeholder="Enter description" required value="{{$faqs->description}}">
+                    placeholder="Enter description" required value="{{$faq->description}}">
             </div>
         </div>
        

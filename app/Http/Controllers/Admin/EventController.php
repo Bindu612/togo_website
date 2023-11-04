@@ -3,20 +3,21 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Faq;
+use App\Models\Event;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class FaqController extends Controller
+class EventController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data =  Faq::all();
-       return view('admin.pages.faqs.index',compact('data'));
+        
+        $data =  Event::all();
+       return view('admin.apps.events.index',compact('data'));
     }
 
     /**
@@ -33,20 +34,23 @@ class FaqController extends Controller
     public function store(Request $request)
     {
          // dd($request->all());
-         $validator = Validator::make($request->all(), [
-            'title' => 'required|string',
-        'description' => 'required|string',
         
+         $validator = Validator::make($request->all(), [
+            'event_date' => 'required|date',
+            'event_start_time' => 'required|date_format:H:i',
+            'event_end_time' => ['required', 'date_format:H:i', Rule::notIn([$validator->event_start_time])],
+            'event_title' => 'required|max:255',
+            'event_notes' => 'nullable',
            
         ]);
         if ($validator->fails()) {
             return $validator->errors();
         } else {
-            $faqData = $request->except('_token');
-            Faq::where('id', $id)->update($faqData);
-            return response()->json(['success' =>" added Successfully"]);
+            $eventData = $request->except('_token');
         
-           
+                Event::create($eventData);
+                return response()->json(['success' => 'Added Successfully']);
+        
         }
     }
 
@@ -63,8 +67,8 @@ class FaqController extends Controller
      */
     public function edit(string $id)
     {
-        $faq = Faq::find($id);
-        return view('admin.pages.faqs.edit',compact('faq')); 
+        $event = Event::find($id);
+        return view('admin.apps.events.edit',compact('event')); 
     }
 
     /**
@@ -73,18 +77,19 @@ class FaqController extends Controller
     public function update(Request $request, string $id)
     {
         $validator = Validator::make($request->all(), [
-            'title' => 'required|string',
-            'description' => 'required|string',
-           
+            'event_date' => 'required|date',
+            'event_start_time' => 'required|date_format:H:i',
+            'event_end_time' => ['required', 'date_format:H:i', Rule::notIn([$validator->event_start_time])],
+            'event_title' => 'required|max:255',
+            'event_notes' => 'nullable',
         ]);
         if ($validator->fails()) {
             return $validator->errors();
          } 
          else {
-            $faqData = $request->except('_token', '_method');
+            $eventData = $request->except('_token', '_method');
         
-          
-            Faq::where('id', $id)->update($faqData);
+            Event::where('id', $id)->update($eventData);
             return response()->json(['success' =>" Updated Successfully"]);
          }
     }
@@ -95,8 +100,8 @@ class FaqController extends Controller
     public function destroy(string $id)
     {
         try {
-            $faqData = Faq::findOrFail($id);
-            $faqData->delete();
+            $eventData = Event::findOrFail($id);
+            $eventData->delete();
             return "Delete";
         } catch (Exception $e) {
             return response()->json(["error" =>"Can't Be Delete this May having some Employee"]);

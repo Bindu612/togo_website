@@ -18,7 +18,7 @@
                                 class="ti ti-search position-absolute top-50 start-0 translate-middle-y fs-6 text-dark ms-3"></i>
                         </form>
                     </div>
-                    @include('admin.pages.faqs.create')
+                    @include('admin.apps.events.create')
                     <div
                         class="col-md-8 col-xl-9 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
                         <div class="action-btn show-btn" style="display: none">
@@ -29,7 +29,7 @@
                         </div>
                         <a href="javascript:void(0)" data-toggle="modal" data-target="#AddBanner"
                             class=" banner btn btn-primary float-end btn-sm"><i
-                                class="ti ti-users text-white me-1 fs-5"></i>Add FAQ</a>
+                                class="ti ti-users text-white me-1 fs-5"></i>Add Event</a>
                     </div>
                 </div>
             </div>
@@ -40,31 +40,32 @@
                     <table class="table search-table align-middle text-nowrap table-bordered data-table">
                         <thead class="header-item">
                             <tr>
-                                <th>Title</th>
-                                <th>Description</th>
-                                <th>Status</th>
-                                <th>Section</th>
+                                <th>Id</th>
+                                <th>Event Date</th>
+                                <th>Event Start Time</th>
+                                <th>Event End Time</th>
+                                <th>Event Title</th>
+                                <th>Event Notes</th>
                                 <th>Action</th>
-                                
+                             
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($data as $item)
                             <tr>
-                              <td>{{$item->title}}</td>
-                              
-                              <td id="description">{{$item->description}}</td>
-                              <td>
-                                  <div class="success-badges changeStatus" data-table="documents" data-uuid="{{$item->id}}"
-                                  data-message="inactive" @if($item->status=="active") data-value="inactive" @else data-value="active" @endif ><span class="legend-indicator bg-success">
-                                  </span>{{ $item->status ?? 'Active' }}</div>
+                              <td class="table-column-pe-0">
+                                  {{ $loop->index + 1 }}
                               </td>
-                            
-                              <td>{{ $item->section }}</td>    
-                                <td style="text-align:right;">
-                                    <form id="edit{{ $item->id}}" action="{{ route('admin.faqs.destroy', $item->id) }}">
+                              <td>{{$item->event_date}}</td>
+                              <td>{{$item->event_start_time}}</td>
+                              <td>{{$item->event_end_time}}</td>
+                              <td>{{$item->event_title}}</td>
+                              <td>{{$item->event_notes}}</td>
+
+                                  <td style="text-align:right;">
+                                    <form id="edit{{ $item->id}}" action="{{ route('admin.events.destroy', $item->id) }}">
                                         <button type="button"
-                                            onclick="editForm('{{ route('admin.faqs.edit', $item->id) }}', 'edit')"
+                                            onclick="editForm('{{ route('admin.events.edit', $item->id) }}', 'edit')"
                                             href="#" data-bs-toggle="modal" data-bs-target="#modaledit"
                                             class="btn btn-primary btn-sm">
                                             <i class="ti ti-pencil" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"></i>
