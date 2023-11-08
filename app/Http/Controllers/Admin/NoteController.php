@@ -44,7 +44,7 @@ class NoteController extends Controller
         if ($validator->fails()) {
             return $validator->errors();
         }
-        Note::Create(
+        Note::updateOrCreate(
             [],
             $request->all()
         );
@@ -84,9 +84,7 @@ class NoteController extends Controller
             return $validator->errors();
         }
         Note::updateOrCreate(
-            [
-                'id' => $id
-            ],
+            [],
             $request->all()
         );
 
