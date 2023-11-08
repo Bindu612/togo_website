@@ -227,10 +227,7 @@
                                                                 urna, eu fermentum diam.
                                                                 In et tristique mauris.
                                                             </p>
-                                                            <p class="mb-0 text-dark">Ut id ornare metus, sed auctor
-                                                                enim.
-                                                                Pellentesque nisi magna, laoreet a augue eget, tempor
-                                                                volutpat diam.</p>
+
                                                         </div>
                                                         <div class="d-flex align-items-center gap-2">
                                                             <button class="btn btn-primary fs-2">Edit</button>
