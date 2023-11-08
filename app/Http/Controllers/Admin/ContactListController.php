@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\ContactList;
+use App\Models\ContactTable;
+
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -15,10 +16,9 @@ class ContactListController extends Controller
      */
     public function index()
     {
-        $contactList = ContactList::first();
+        $data =  ContactTable::all();
 
-        return view('admin.apps.contact-lists.index', compact('contactList'));
-
+        return view('admin.apps.contact-lists.index', compact('data'));
     }
 
     /**
@@ -34,8 +34,6 @@ class ContactListController extends Controller
      */
     public function store(Request $request)
     {
-       
-    
     }
 
     /**

@@ -40,41 +40,38 @@ Route::prefix('admin')->as('admin.')->group(function () {
     Auth::routes();
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-    
-Route::resource('banner',BannerController::class);
-Route::resource('advantage',AdvantageController::class);
-Route::resource('challenge', ChallengeController::class);
-Route::resource('faqs', FaqController::class);
-Route::resource('account-setting', AccountSettingController::class);
-Route::resource('calendar', CalendarController::class);
-Route::resource('events', EventController::class);
-Route::resource('notes', NoteController::class);
-Route::resource('contact-lists', ContactListController::class);
-Route::resource('contact-tables', ContactTableController::class);
-Route::resource('note-applications', NoteApplicationController::class);
 
-Route::controller(UserController::class)->group(function () {
-    Route::get('user', 'showIndex')->name('admin.login');
+    Route::resource('banner', BannerController::class);
+    Route::resource('advantage', AdvantageController::class);
+    Route::resource('challenge', ChallengeController::class);
+    Route::resource('faqs', FaqController::class);
+    Route::resource('account-setting', AccountSettingController::class);
+    Route::resource('calendar', CalendarController::class);
+    Route::resource('events', EventController::class);
+    Route::resource('notes', NoteController::class);
+    Route::resource('contact-lists', ContactListController::class);
+
+
+    Route::resource('contact-tables', ContactTableController::class);
+    Route::resource('note-applications', NoteApplicationController::class);
+
+    Route::controller(UserController::class)->group(function () {
+        Route::get('user', 'showIndex')->name('admin.login');
+    });
+
+
+
+
+
+    Route::resource('services', ServiceController::class);
+
+
+    Route::resource('contact-us', ContactUsListController::class);
+
+    Route::resource('about-us', AboutUsController::class);
+
+    Route::controller(SiteSettingController::class)->group(function () {
+        Route::get('site-setting', 'index')->name('site-setting');
+        Route::post('site-setting', 'store')->name('store.site-setting');
+    });
 });
-
-
-
-
-Route::resource('services', ServiceController::class);
-
-
-Route::resource('contact-us', ContactUsListController::class);
- 
-Route::resource('about-us', AboutUsController::class);
-
-Route::controller(SiteSettingController::class)->group(function () {
-    Route::get('site-setting', 'index')->name('site-setting');
-    Route::post('site-setting', 'store')->name('store.site-setting');
-
-
-});
-
-});
-
-
-

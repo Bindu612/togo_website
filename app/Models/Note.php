@@ -10,12 +10,12 @@ class Note extends Model
     use HasFactory;
     protected $fillable = [
         'note_title',
-            'description',
-            'start_date',
-            'due_date',
-            'priority',
-            'reporter_id',
-            'assignee_id',
-        
+        'note_sub_title',
+        'description',
+        'start_date',
+        'due_date',
+        'priority',
+
+
     ];
 }

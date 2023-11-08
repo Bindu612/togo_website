@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\NoteApplication;
-use Exception;
+use App\Models\Note;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -15,10 +15,8 @@ class NoteApplicationController extends Controller
      */
     public function index()
     {
-        $noteApplication = NoteApplication::first();
-
-        return view('admin.apps.note-applications.index', compact('noteApplication'));
-
+        $data =  Note::all();
+        return view('admin.apps.note-applications.index', compact('data'));
     }
 
     /**
@@ -35,7 +33,7 @@ class NoteApplicationController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            
+
             'name' => 'required|string',
 
 
@@ -43,12 +41,12 @@ class NoteApplicationController extends Controller
         if ($validator->fails()) {
             return $validator->errors();
         }
-        Calendar::updateOrCreate( [], 
-            $request->all() 
+        Note::updateOrCreate(
+            [],
+            $request->all()
         );
-    
+
         return response()->json(['success' => 'Added Successfully']);
-    
     }
 
     /**

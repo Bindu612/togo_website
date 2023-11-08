@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\AccountSetting;
+use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -15,10 +15,8 @@ class AccountSettingController extends Controller
      */
     public function index()
     {
-        $accountSetting = AccountSetting::first();
-
-        return view('admin.pages.account_setting.index', compact('accountSetting'));
-
+        $users = User::all();
+        return view('admin.pages.account_setting.index', compact('users'));
     }
 
     /**
@@ -34,22 +32,6 @@ class AccountSettingController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            
-            'current_password' => 'string|required',
-            'new_password' => 'string|required|confirmed|min:6',
-
-
-        ]);
-        if ($validator->fails()) {
-            return $validator->errors();
-        }
-        AccountSetting::updateOrCreate( [], 
-            $request->all() 
-        );
-    
-        return response()->json(['success' => 'Added Successfully']);
-    
     }
 
     /**

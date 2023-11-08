@@ -14,15 +14,12 @@ return new class extends Migration
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
             $table->string('note_title');
+            $table->string('note_sub_title');
             $table->text('description');
             $table->date('start_date');
             $table->date('due_date');
             $table->string('priority');
-            $table->unsignedBigInteger('reporter_id');
-            $table->unsignedBigInteger('assignee_id');
             $table->timestamps();
-
-           
         });
     }
 

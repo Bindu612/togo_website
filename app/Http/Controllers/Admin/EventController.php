@@ -15,9 +15,9 @@ class EventController extends Controller
      */
     public function index()
     {
-        
+
         $data =  Event::all();
-       return view('admin.apps.events.index',compact('data'));
+        return view('admin.apps.events.index', compact('data'));
     }
 
     /**
@@ -33,24 +33,25 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-         // dd($request->all());
-        
-         $validator = Validator::make($request->all(), [
+        // dd($request->all());
+
+        $validator = Validator::make($request->all(), [
             'event_date' => 'required|date',
             'event_start_time' => 'required|date_format:H:i',
-            'event_end_time' => ['required', 'date_format:H:i', Rule::notIn([$validator->event_start_time])],
+            'event_end_time' => 'required', 'date_format:H:i',
             'event_title' => 'required|max:255',
             'event_notes' => 'nullable',
-           
+
         ]);
-      
+
         if ($validator->fails()) {
             return $validator->errors();
         }
-        Event::updateOrCreate( [], 
-            $request->all() 
+        Event::updateOrCreate(
+            [],
+            $request->all()
         );
-    
+
         return response()->json(['success' => 'Added Successfully']);
     }
 
@@ -68,7 +69,7 @@ class EventController extends Controller
     public function edit(string $id)
     {
         $event = Event::find($id);
-        return view('admin.apps.events.edit',compact('event')); 
+        return view('admin.apps.events.edit', compact('event'));
     }
 
     /**
@@ -79,18 +80,19 @@ class EventController extends Controller
         $validator = Validator::make($request->all(), [
             'event_date' => 'required|date',
             'event_start_time' => 'required|date_format:H:i',
-            'event_end_time' => ['required', 'date_format:H:i', Rule::notIn([$validator->event_start_time])],
+            'event_end_time' => 'required', 'date_format:H:i',
             'event_title' => 'required|max:255',
             'event_notes' => 'nullable',
         ]);
-        
-         if ($validator->fails()) {
+
+        if ($validator->fails()) {
             return $validator->errors();
         }
-        Event::updateOrCreate( [], 
-            $request->all() 
+        Event::updateOrCreate(
+            [],
+            $request->all()
         );
-    
+
         return response()->json(['success' => 'updated Successfully']);
     }
 
@@ -104,7 +106,7 @@ class EventController extends Controller
             $eventData->delete();
             return "Delete";
         } catch (Exception $e) {
-            return response()->json(["error" =>"Can't Be Delete this May having some Employee"]);
+            return response()->json(["error" => "Can't Be Delete this May having some Employee"]);
         }
     }
 }

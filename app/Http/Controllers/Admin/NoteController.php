@@ -15,9 +15,8 @@ class NoteController extends Controller
      */
     public function index()
     {
-        
         $data =  Note::all();
-       return view('admin.apps.notes.index',compact('data'));
+        return view('admin.apps.notes.index', compact('data'));
     }
 
     /**
@@ -26,30 +25,31 @@ class NoteController extends Controller
     public function create()
     {
         $users = Note::all();
-        return view('admin.apps.notes.index',compact('users'));    }
+        return view('admin.apps.notes.index', compact('users'));
+    }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-         // dd($request->all());
-        
-         $validator = Validator::make($request->all(), [
+        // dd($request->all());
+
+
+        $validator = Validator::make($request->all(), [
             'note_title' => 'required|max:255',
-           
-           
-           
+
+
         ]);
         if ($validator->fails()) {
             return $validator->errors();
-        } else {
-            $noteData = $request->except('_token');
-        
-            Note::create($noteData);
-                return response()->json(['success' => 'Added Successfully']);
-        
         }
+        Note::Create(
+            [],
+            $request->all()
+        );
+
+        return response()->json(['success' => 'Added Successfully']);
     }
 
     /**
@@ -65,8 +65,9 @@ class NoteController extends Controller
      */
     public function edit(string $id)
     {
+
         $note = Note::find($id);
-        return view('admin.apps.notes.edit',compact('note')); 
+        return view('admin.apps.notes.edit', compact('note'));
     }
 
     /**
@@ -76,17 +77,20 @@ class NoteController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'note_title' => 'required|max:255',
-            
+
         ]);
+
         if ($validator->fails()) {
             return $validator->errors();
-         } 
-         else {
-            $noteData = $request->except('_token', '_method');
-        
-            Note::where('id', $id)->update($noteData);
-            return response()->json(['success' =>" Updated Successfully"]);
-         }
+        }
+        Note::updateOrCreate(
+            [
+                'id' => $id
+            ],
+            $request->all()
+        );
+
+        return response()->json(['success' => 'updated Successfully']);
     }
 
     /**
@@ -99,7 +103,7 @@ class NoteController extends Controller
             $noteData->delete();
             return "Delete";
         } catch (Exception $e) {
-            return response()->json(["error" =>"Can't Be Delete this May having some Employee"]);
+            return response()->json(["error" => "Can't Be Delete this May having some Employee"]);
         }
     }
 }

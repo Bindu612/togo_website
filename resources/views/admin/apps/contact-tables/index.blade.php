@@ -40,13 +40,20 @@
                     <table class="table search-table align-middle text-nowrap table-bordered data-table">
                         <thead class="header-item">
                             <tr>
+
                                 <th>Id</th>
                                 <th>Name</th>
+                                <th>Image</th>
+                                <th>Description</th>
+                                <th>Designation</th>
+                                <th>Company</th>
+                                <th>City</th>
+                                <th>Country</th>
                                 <th>Email</th>
                                 <th>Location</th>
                                 <th>Phone</th>
                                 <th>Action</th>
-                                
+
                             </tr>
                         </thead>
                         <tbody>
@@ -56,11 +63,25 @@
                                   {{ $loop->index + 1 }}
                               </td>
                               <td>{{$item->name}}</td>
+                              <td>
+                                @if($item->image)
+                                     <img src="{{ asset('assets/images/contact_image/' . $item->image) }}" alt="" width="70" height="70">
+                                @else
+                                    No Document Available
+                                @endif
+                              </td>
+
+                              <td>{{$item->description}}</td>
+                              <td>{{$item->designation}}</td>
+                              <td>{{$item->company}}</td>
+                              <td>{{$item->city}}</td>
+
+                              <td>{{$item->country}}</td>
                               <td>{{$item->email}}</td>
                               <td>{{$item->location}}</td>
                               <td>{{$item->phone}}</td>
-                              
-                            
+
+
                                 <td style="text-align:right;">
                                     <form id="edit{{ $item->id}}" action="{{ route('admin.contact-tables.destroy', $item->id) }}">
                                         <button type="button"
@@ -77,7 +98,7 @@
                                         </button>
                                     </form>
                                 </td>
-                            </tr>   
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>

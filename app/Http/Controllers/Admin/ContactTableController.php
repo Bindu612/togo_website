@@ -13,10 +13,11 @@ class ContactTableController extends Controller
     /**
      * Display a listing of the resource.
      */
+
     public function index()
     {
         $data =  ContactTable::all();
-       return view('admin.apps.contact-tables.index',compact('data'));
+        return view('admin.apps.contact-tables.index', compact('data'));
     }
 
     /**
@@ -32,23 +33,33 @@ class ContactTableController extends Controller
      */
     public function store(Request $request)
     {
-       
-         $validator = Validator::make($request->all(), [
+
+        $validator = Validator::make($request->all(), [
             'name' => 'string|required',
             'email' => 'required|email',
             'location' => 'string|required',
             'phone' => 'required|string|digits:10',
-          
+
         ]);
         if ($validator->fails()) {
             return $validator->errors();
+        } else {
+            $contacttableData = $request->except('_token');
+
+            if ($request->hasFile('image')) {
+                $file = $request->file('image');
+                $extension = $file->getClientOriginalExtension();
+                $filename = $file->getClientOriginalName();
+                $file->move('assets/images/contact_image', $filename);
+                $contacttableData['image'] = $filename;
+            }
+            try {
+                ContactTable::create($contacttableData);
+                return response()->json(['success' => 'Added Successfully']);
+            } catch (Exception $e) {
+                return response()->json(['error' => $e->getMessage()]);
+            }
         }
-        ContactTable::updateOrCreate( [], 
-            $request->all() 
-        );
-    
-        return response()->json(['success' => 'Added Successfully']);
-       
     }
 
     /**
@@ -65,7 +76,7 @@ class ContactTableController extends Controller
     public function edit(string $id)
     {
         $contactTable = ContactTable::find($id);
-        return view('admin.apps.contact-tables.edit',compact('contactTable')); 
+        return view('admin.apps.contact-tables.edit', compact('contactTable'));
     }
 
     /**
@@ -75,17 +86,23 @@ class ContactTableController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'string|required',
-           
-            
         ]);
         if ($validator->fails()) {
             return $validator->errors();
+        } else {
+            $contacttableData = $request->except('_token', '_method');
+
+            if ($request->hasFile('image')) {
+                $file = $request->file('image');
+                $extension = $file->getClientOriginalExtension();
+                $filename = $file->getClientOriginalName();
+                $file->move('assets/images/contact_image', $filename);
+                $contacttableData['image'] = $filename;
+            }
+
+            ContactTable::where('id', $id)->update($contacttableData);
+            return response()->json(['success' => " Updated Successfully"]);
         }
-        ContactTable::updateOrCreate( [], 
-            $request->all() 
-        );
-    
-        return response()->json(['success' => 'updated Successfully']);
     }
 
     /**
@@ -98,7 +115,7 @@ class ContactTableController extends Controller
             $contacttableData->delete();
             return "Delete";
         } catch (Exception $e) {
-            return response()->json(["error" =>"Can't Be Delete this May having some Employee"]);
+            return response()->json(["error" => "Can't Be Delete this May having some Employee"]);
         }
     }
 }
