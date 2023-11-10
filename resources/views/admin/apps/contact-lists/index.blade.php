@@ -856,7 +856,7 @@
                 const contactcity = $(this).data('contact-city');
                 const contactcountry = $(this).data('contact-country');
                 const contactphone = $(this).data('contact-phone');
-                const contactimage = $(this).data('contact-image');
+
                 const contactemail = $(this).data('contact-email');
                 const contactlocation = $(this).data('contact-location');
                 $('.contact-name').text(contactname);
@@ -867,8 +867,12 @@
                 $('.contact-phone').text(contactphone);
                 $('.contact-country').text(contactcountry);
                 $('.contact-location').text(contactlocation);
-                $('.contact-image').text(contactimage);
+
                 $('.contact-email').text(contactemail);
+
+                var imageURL = $(this).data('contact-image');
+                var imgElement = document.getElementsByClassName("contact-image");
+                imgElement.src = imageURL;
 
             });
         });

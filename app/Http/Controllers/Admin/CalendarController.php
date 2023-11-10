@@ -18,7 +18,6 @@ class CalendarController extends Controller
         $accountSetting = Calendar::first();
 
         return view('admin.apps.calendar.index', compact('accountSetting'));
-
     }
 
     /**
@@ -34,21 +33,6 @@ class CalendarController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            
-            'events' => 'required|string',
-
-
-        ]);
-        if ($validator->fails()) {
-            return $validator->errors();
-        }
-        Calendar::updateOrCreate( [], 
-            $request->all() 
-        );
-    
-        return response()->json(['success' => 'Added Successfully']);
-    
     }
 
     /**

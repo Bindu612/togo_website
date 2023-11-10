@@ -44,7 +44,7 @@ class NoteController extends Controller
         if ($validator->fails()) {
             return $validator->errors();
         }
-        Note::updateOrCreate(
+        Note::Create(
             [],
             $request->all()
         );
