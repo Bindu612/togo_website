@@ -15,11 +15,11 @@ class UsersTableSeeder extends Seeder
     public function run(): void
     {
         $user = User::updateOrCreate
-        (['email'=>"admin@togoteam.com"],
+        (['email'=>"admin@moldthefuture.com"],
        
 
         ['name'=>"admin",
-        'email'=>"admin@togoteam.com",
+        'email'=>"admin@moldthefuture.com",
         'password'=> Hash::make('User@123'),
         'image'=>'device.png',
         'location'=>'giridih',
