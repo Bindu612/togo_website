@@ -16,7 +16,7 @@ class BannerController extends Controller
     public function index()
     {
         $data =  Banner::all();
-       return view('admin.pages.banner.index',compact('data'));
+        return view('admin.pages.banner.index', compact('data'));
     }
 
     /**
@@ -32,19 +32,18 @@ class BannerController extends Controller
      */
     public function store(Request $request)
     {
-         // dd($request->all());
-         $description = substr($description, 0, 255); // Truncate to 255 characters
+        // dd($request->all());
 
-         $validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
             'name' => 'string|required',
             'banner_image' => 'required|file|mimes:jpeg,jpg,png',
-           
+
         ]);
         if ($validator->fails()) {
             return $validator->errors();
         } else {
             $bannerData = $request->except('_token');
-        
+
             if ($request->hasFile('banner_image')) {
                 $file = $request->file('banner_image');
                 $extension = $file->getClientOriginalExtension();
@@ -75,7 +74,7 @@ class BannerController extends Controller
     public function edit(string $id)
     {
         $banner = Banner::find($id);
-        return view('admin.pages.banner.edit',compact('banner')); 
+        return view('admin.pages.banner.edit', compact('banner'));
     }
 
     /**
@@ -86,14 +85,13 @@ class BannerController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'string|required',
             'banner_image' => 'nullable|file|mimes:jpeg,jpg,png',
-            
+
         ]);
         if ($validator->fails()) {
             return $validator->errors();
-         } 
-         else {
+        } else {
             $bannerData = $request->except('_token', '_method');
-        
+
             if ($request->hasFile('banner_image')) {
                 $file = $request->file('banner_image');
                 $extension = $file->getClientOriginalExtension();
@@ -103,8 +101,8 @@ class BannerController extends Controller
             }
 
             Banner::where('id', $id)->update($bannerData);
-            return response()->json(['success' =>" Updated Successfully"]);
-         }
+            return response()->json(['success' => " Updated Successfully"]);
+        }
     }
 
     /**
@@ -117,7 +115,7 @@ class BannerController extends Controller
             $bannerData->delete();
             return "Delete";
         } catch (Exception $e) {
-            return response()->json(["error" =>"Can't Be Delete this May having some Employee"]);
+            return response()->json(["error" => "Can't Be Delete this May having some Employee"]);
         }
     }
 }
