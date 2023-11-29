@@ -1,4 +1,10 @@
 @extends('front.layouts.main')
+
+@section('SEO')
+    <meta name="description"
+        content="School management is an important part of any educational system. Here are some unavoidable characteristics of Effective School Management Software.
+        ">
+@endsection
 @section('section')
     <section class="category__area pt-150 pb-30" style="background: #00383d;">
         <div class="container">

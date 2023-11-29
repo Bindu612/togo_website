@@ -4,8 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Moldthe future</title>
-    <meta name="description" content="">
+    <title>Moldthefuture</title>
+    @yield('SEO')
+    <meta name="description"
+        content="Discover the Ultimate school management system- Simplify Administration, Enhance Communication, and Elevate Education. Explore Our Platform Now.
+    ">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
 
@@ -13,20 +16,22 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="{{asset('front/assets/css/bootstrap.css')}}">
-    <link rel="stylesheet" href="{{asset('front/assets/css/meanmenu.css')}}">
-    <link rel="stylesheet" href="{{asset('front/assets/css/animate.css')}}">
-    <link rel="stylesheet" href="{{asset('front/assets/css/owl-carousel.css')}}">
-    <link rel="stylesheet" href="{{asset('front/assets/css/swiper-bundle.css')}}">
-    <link rel="stylesheet" href="{{asset('front/assets/css/backtotop.css')}}">
-    <link rel="stylesheet" href="{{asset('front/assets/css/magnific-popup.css')}}">
-    <link rel="stylesheet" href="{{asset('front/assets/css/nice-select.css')}}">
-    <link rel="stylesheet" href="{{asset('front/assets/css/font-awesome-pro.css')}}">
-    <link rel="stylesheet" href="{{asset('front/assets/css/spacing.css')}}">
-    <link rel="stylesheet" href="{{asset('front/assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('front/assets/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/assets/css/meanmenu.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/assets/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/assets/css/owl-carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/assets/css/swiper-bundle.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/assets/css/backtotop.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/assets/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/assets/css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/assets/css/font-awesome-pro.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/assets/css/spacing.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/assets/css/style.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1;0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1;0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -34,13 +39,13 @@
     <div id="loading">
         <div id="loading-center">
             <div id="loading-center-absolute">
-            <div id="preloader">
-  <div id="loader"></div>
-</div>
+                <div id="preloader">
+                    <div id="loader"></div>
+                </div>
             </div>
         </div>
-    </div> 
- 
+    </div>
+
     <!-- pre loader area end -->
 
     <!-- back to top start -->
@@ -62,21 +67,21 @@
                                 <div class="logo">
 
                                     <a href="index.php">
-                                        <img src="{{asset('front/assets/img/logo/logo-2.png')}}" alt="logo">
+                                        <img src="{{ asset('front/assets/img/logo/logo-2.png') }}" alt="logo">
                                     </a>
                                 </div>
                                 <div class="main-menu main-menu-2 main-menu-border ml-30 pl-30">
                                     <nav id="mobile-menu">
                                         <ul>
                                             <li>
-                                                <a href="{{url('/')}}">Home</a>
+                                                <a href="{{ url('/') }}">Home</a>
 
                                             </li>
                                             <li>
-                                            <a href="{{url('/about-us')}}">About Us</a>
+                                                <a href="{{ url('/about-us') }}">About Us</a>
                                             </li>
                                             <li>
-                                                <a href="{{url('/features')}}">Features</a>
+                                                <a href="{{ url('/features') }}">Features</a>
                                             </li>
 
                                             <!-- <li>
@@ -87,7 +92,7 @@
                                             </li> -->
 
                                             <li>
-                                                <a href="{{url('/contact-us')}}">Contact Us</a>
+                                                <a href="{{ url('/contact-us') }}">Contact Us</a>
                                             </li>
 
 
@@ -98,7 +103,7 @@
                         </div>
                         <div class="col-xxl-4 col-xl-3 col-lg-2 col-md-6 col-6">
                             <div class="header__bottom-right d-flex justify-content-end align-items-center pl-30">
-                              
+
                                 <div class="header__hamburger ml-50 d-xl-none">
                                     <button type="button" data-bs-toggle="modal" data-bs-target="#offcanvasmodal"
                                         class="hamurger-btn">

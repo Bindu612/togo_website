@@ -1,4 +1,10 @@
 @extends('front.layouts.main')
+
+@section('SEO')
+    <meta name="description"
+        content="Get in touch with us! Whether you have questions, feedback, or collaboration opportunities, our friendly team is here to assist you. Reach out today and let's start a conversation.
+        ">
+@endsection
 @section('section')
     <!-- contact area start -->
 
@@ -8,8 +14,8 @@
                 <div class="col-xxl-7 col-xl-7 col-lg-6">
                     <div class="contact__wrapper">
                         <div class="section__title-wrapper mb-40">
-                            <h2 class="section__title">Get in<span class="yellow-bg yellow-bg-big"> touch<img
-                                        src="assets/img/shape/yellow-bg.html" alt=""></span></h2>
+                            <h1 class="section__title">GET IN<span class="yellow-bg yellow-bg-big"> TOUCH WITH US<img
+                                        src="assets/img/shape/yellow-bg.html" alt=""></span></h1>
                             <p>Have a question or just want to say hi? We'd love to hear from you.</p>
                         </div>
                         @if (session('success'))
